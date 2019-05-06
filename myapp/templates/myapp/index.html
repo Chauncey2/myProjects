@@ -2,8 +2,208 @@
 {% load static %}
 {% block content %}
     <div class="content">
-        <h2>这是继承的内容</h2>
-    </div>
+    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script>
+        <style>
+            .bg{
+                width: 100%;
+                height: 100px;
+                margin-bottom: 10px;
+                background-color: #0c87eb
+            }
+        </style>
 
+        <div class="container-fluid">
+
+            <!--第一行：饼状图和折线图-->
+            <div class="row" >
+                <div id="main" style="width: 50%;height:400px;"></div>
+                <div id="main2" style=" width: 50%;height:400px;"></div>
+
+                <script type="text/javascript">
+                    var myBarChart = echarts.init(document.getElementById('main'));
+                    //饼状图的配置项和数据
+                    var option_bar = {
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b}: {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            x: 'left',
+                            data:['金融','服务业','教育产业','建筑','互联网']
+                        },
+                        series: [
+                            {
+                                name:'不同职业数量统计',
+                                type:'pie',
+                                radius: ['50%', '70%'],
+                                avoidLabelOverlap: true,
+                                label: {
+                                    normal: {
+                                        show: false,
+                                        position: 'center'
+                                    },
+                                    emphasis: {
+                                        show: true,
+                                        textStyle: {
+                                            fontSize: '30',
+                                            fontWeight: 'bold'
+                                        }
+                                    }
+                                },
+                                labelLine: {
+                                    normal: {
+                                        show: false
+                                    }
+                                },
+                                data:[
+                                    {value:335, name:'服务业'},
+                                    {value:310, name:'教育'},
+                                    {value:234, name:'金融'},
+                                    {value:135, name:'建筑'},
+                                    {value:1548, name:'互联网'}
+                                ]
+                            }
+                        ]
+                    };
+                    // 使用刚指定的配置项和数据显示图表。
+                    myBarChart.setOption(option_bar);
+
+                    //折线图统计
+                    var myLineChart=echarts.init(document.getElementById('main2'));
+                    var option_line={
+                        title:{
+                            text:"招聘网站月份职位数目统计"
+                        },
+
+                        xAxis: {
+                            type: 'category',
+                            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月']
+                         },
+                        yAxis: {
+                            type: 'value'
+                          },
+                        series: [{
+                                  data: [30000, 35000, 25000, 23000, 21000],
+                                  type: 'line',
+                                  smooth: true
+                        }]
+                      };
+                    myLineChart.setOption(option_line);
+                </script>
+            </div>
+            <!--堆叠图：每个行业不同月份职位分布-->
+            <div class="row" >
+                <div id="StackMaps" style="width: 100%;height: 400px;"></div>
+                <script type="text/javascript">
+                    var  myStackMaps=echarts.init(document.getElementById('StackMaps'));
+                    var option = {
+                            title: {
+                                text: '不同行业职位月份统计'
+                            },
+                            tooltip : {
+                                trigger: 'axis',
+                                axisPointer: {
+                                    type: 'cross',
+                                    label: {
+                                        backgroundColor: '#6a7985'
+                                    }
+                                }
+                            },
+                            legend: {
+                                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                            },
+                            toolbox: {
+                                feature: {
+                                    saveAsImage: {}
+                                }
+                            },
+                            grid: {
+                                left: '3%',
+                                right: '4%',
+                                bottom: '3%',
+                                containLabel: true
+                            },
+                            xAxis : [
+                                {
+                                    type : 'category',
+                                    boundaryGap : false,
+                                    data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月']
+                                }
+                            ],
+                            yAxis : [
+                                {
+                                    type : 'value'
+                                }
+                            ],
+                            series : [
+                                {
+                                    name:'邮件营销',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                },
+                                {
+                                    name:'联盟广告',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[220, 182, 191, 234, 290, 330, 310]
+                                },
+                                {
+                                    name:'视频广告',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[150, 232, 201, 154, 190, 330, 410]
+                                },
+                                {
+                                    name:'直接访问',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {normal: {}},
+                                    data:[320, 332, 301, 334, 390, 330, 320]
+                                },
+                                {
+                                    name:'搜索引擎',
+                                    type:'line',
+                                    stack: '总量',
+                                    label: {
+                                        normal: {
+                                            show: true,
+                                            position: 'top'
+                                        }
+                                    },
+                                    areaStyle: {normal: {}},
+                                    data:[820, 932, 901, 934, 1290, 1330, 1320]
+                                }
+                            ]
+                        };
+                    myStackMaps.setOption(option);
+                </script>
+            </div>
+            <!--中国地图职位和城市分布-->
+            <div class="row" >
+            {# 还未申请百度地图API以及显示地图所需要的工具包        #}
+            {#{% include 'myapp/map-polygon.html' %}#}
+            </div>
+
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+            <div class="row bg" ><h2>首页图表</h2></div>
+        </div>
+
+    </div>
 {% endblock %}
 
