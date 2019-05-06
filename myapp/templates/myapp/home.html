@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>招聘网站职位数据挖掘与分析</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/simple-line-icons/css/simple-line-icons.css '%}" >
+    <link rel="stylesheet" href="{% static 'myapp/css/font-awesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
+    {% block jsmodel %} {% endblock %}
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+
+    <!--首页页眉-->
+    <nav class="navbar page-header" style="text-align: center">
+{#        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">#}
+{#            <i class="fa fa-bars">1</i>#}
+{#        </a>#}
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="main-container">
+        <!--左侧栏目-->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">控制台</li>
+                    <li class="nav-item">
+                        <a href="{% url 'myapp:index' %}" class="nav-link active">
+                            <i class="icon icon-speedometer"></i> 首页
+                        </a>
+                    </li>
+                    <!--互联网行业下拉框-->
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-target"></i> 互联网行业 <i class="fa fa-caret-left"></i>
+                        </a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="{% url 'myapp:normal' %}" class="nav-link">
+                                    <i class="icon icon-target"></i> 城市分布统计
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{% url 'myapp:fixed_sidebar' %}" class="nav-link">
+                                    <i class="icon icon-target"></i> 全国分布
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{% url 'myapp:fixed_header' %}" class="nav-link">
+                                    <i class="icon icon-target"></i> 主流编程语言统计
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{% url 'myapp:hidden' %}" class="nav-link">
+                                    <i class="icon icon-target"></i> 平均薪资
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--金融行业下拉框-->
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-energy"></i> 金融 <i class="fa fa-caret-left"></i>
+                        </a>
+
+
+                    </li>
+
+                    <!--房地产行业下拉框-->
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="icon icon-graph"></i> 房地产 <i class="fa fa-caret-left"></i>
+                        </a>
+                    </li>
+
+                    <!--其他行业下拉框-->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="icon icon-puzzle"></i>其他
+                        </a>
+                    </li>
+                    <!--结束-->
+                </ul>
+            </nav>
+        </div>
+        <!--首页中间栏目-->
+
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+</div>
+
+
+
+<script src="{% static 'myapp/js/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'myapp/js/popper.js/popper.min.js' %}"></script>
+<script src="{% static 'myapp/js/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'myapp/js/chart.js/chart.min.js' %}"></script>
+<!--carbon和demo用于主页页面点击效果-->
+<script src="{% static 'myapp/js/carbon.js' %}"></script>
+<script src="{% static 'myapp/js/demo.js' %}"></script>
+</body>
+</html>

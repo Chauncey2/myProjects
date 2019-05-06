@@ -1,0 +1,218 @@
+{% extends 'myapp/home.html' %}
+{% load static %}
+{% block jsmodel %}
+    <script src="{% static 'myapp/js/Job_statistics_js.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+        <!--此处加载主流编程语言统计图-->
+        <div  class="content" id="fixed_header" style="width:800px;height:400px;">
+        </div>
+        <script type="text/javascript">
+
+            var myChart_25d525c4776541ac82fdd240743198ca = echarts.init(document.getElementById('fixed_header'), 'light', {renderer: 'canvas'});
+
+            var option_25d525c4776541ac82fdd240743198ca = {
+                    "title": [
+            {
+                "text": "\u4e3b\u6d41\u7f16\u7a0b\u8bed\u8a00\u804c\u4f4d\u62db\u8058\u7edf\u8ba1",
+                "left": "auto",
+                "top": "auto",
+                "textStyle": {
+                    "fontSize": 18
+                },
+                "subtextStyle": {
+                    "fontSize": 12
+                }
+            }
+                             ],
+                    "toolbox": {
+            "show": true,
+            "orient": "vertical",
+            "left": "95%",
+            "top": "center",
+            "feature": {
+                "saveAsImage": {
+                    "show": true,
+                    "title": "save as image"
+                },
+                "restore": {
+                    "show": true,
+                    "title": "restore"
+                },
+                "dataView": {
+                    "show": true,
+                    "title": "data view"
+                }
+            }
+                      },
+                   "series_id": 4399850,
+                   "tooltip": {
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "backgroundColor": "rgba(50,50,50,0.7)",
+            "borderColor": "#333",
+            "borderWidth": 0
+                      },
+                   "series": [
+            {
+                "type": "bar",
+                "name": "Count",
+                "data": [
+                    2295,
+                    1043,
+                    799,
+                    1070,
+                    1098
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "normal": {
+                        "show": false,
+                        "position": "top",
+                        "textStyle": {
+                            "fontSize": 12
+                        }
+                    },
+                    "emphasis": {
+                        "show": true,
+                        "textStyle": {
+                            "fontSize": 12
+                        }
+                    }
+                },
+                "markPoint": {
+                    "data": []
+                },
+                "markLine": {
+                    "data": []
+                },
+                "seriesId": 4399850
+            }
+                       ],
+                   "legend": [
+            {
+                "data": [
+                    "Count"
+                ],
+                "selectedMode": "multiple",
+                "show": true,
+                "left": "center",
+                "top": "top",
+                "orient": "horizontal",
+                "textStyle": {
+                    "fontSize": 12
+                }
+            }
+                ],
+                           "animation": true,
+                           "xAxis": [
+                    {
+                        "show": true,
+                        "nameLocation": "middle",
+                        "nameGap": 25,
+                        "nameTextStyle": {
+                            "fontSize": 14
+                        },
+                        "axisTick": {
+                            "alignWithLabel": false
+                        },
+                        "inverse": false,
+                        "boundaryGap": true,
+                        "type": "category",
+                        "splitLine": {
+                            "show": false
+                        },
+                        "axisLine": {
+                            "lineStyle": {
+                                "width": 1
+                            }
+                        },
+                        "axisLabel": {
+                            "interval": "auto",
+                            "rotate": 0,
+                            "margin": 8,
+                            "textStyle": {
+                                "fontSize": 12
+                            }
+                        },
+                        "data": [
+                            "java",
+                            ".net",
+                            "python",
+                            "android",
+                            "C"
+                        ]
+                    }
+                            ],
+                           "yAxis": [
+                    {
+                        "show": true,
+                        "nameLocation": "middle",
+                        "nameGap": 25,
+                        "nameTextStyle": {
+                            "fontSize": 14
+                        },
+                        "axisTick": {
+                            "alignWithLabel": false
+                        },
+                        "inverse": false,
+                        "boundaryGap": true,
+                        "type": "value",
+                        "splitLine": {
+                            "show": true
+                        },
+                        "axisLine": {
+                            "lineStyle": {
+                                "width": 1
+                            }
+                        },
+                        "axisLabel": {
+                            "interval": "auto",
+                            "formatter": "{value} ",
+                            "rotate": 0,
+                            "margin": 8,
+                            "textStyle": {
+                                "fontSize": 12
+                            }
+                        }
+                    }
+                               ],
+                          "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597",
+                    "#f6f5ec"
+                          ]
+                             };
+         myChart_25d525c4776541ac82fdd240743198ca.setOption(option_25d525c4776541ac82fdd240743198ca);
+</script>
+
+{% endblock %}
