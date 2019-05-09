@@ -2,24 +2,18 @@
 {% load static %}
 {% block content %}
     <div class="content">
-    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script>
-        <style>
-            .bg{
-                width: 100%;
-                height: 100px;
-                margin-bottom: 10px;
-                background-color: #0c87eb
-            }
-        </style>
-
+    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script
         <div class="container-fluid">
 
             <!--第一行：饼状图和折线图-->
             <div class="row" >
-                <div id="main" style="width: 50%;height:400px;"></div>
-                <div id="main2" style=" width: 50%;height:400px;"></div>
-
+                <div id="main" class="card" style="width: 50%;height:400px;"></div>
+                <div id="main2" class="card" style=" width: 50%;height:400px;"></div>
                 <script type="text/javascript">
+                    //接收视图函数传递过来的参数
+                    var item_list = {{ jobType|safe }}
+                    var val_list={{ val_list|safe }}
+
                     var myBarChart = echarts.init(document.getElementById('main'));
                     //饼状图的配置项和数据
                     var option_bar = {
@@ -28,9 +22,9 @@
                             formatter: "{a} <br/>{b}: {c} ({d}%)"
                         },
                         legend: {
-                            orient: 'vertical',
+                            orient: 'horizontal',
                             x: 'left',
-                            data:['金融','服务业','教育产业','建筑','互联网']
+                            data:item_list,
                         },
                         series: [
                             {
@@ -44,7 +38,7 @@
                                         position: 'center'
                                     },
                                     emphasis: {
-                                        show: true,
+                                        show: false,
                                         textStyle: {
                                             fontSize: '30',
                                             fontWeight: 'bold'
@@ -56,16 +50,11 @@
                                         show: false
                                     }
                                 },
-                                data:[
-                                    {value:335, name:'服务业'},
-                                    {value:310, name:'教育'},
-                                    {value:234, name:'金融'},
-                                    {value:135, name:'建筑'},
-                                    {value:1548, name:'互联网'}
-                                ]
+                                data:val_list
                             }
                         ]
                     };
+
                     // 使用刚指定的配置项和数据显示图表。
                     myBarChart.setOption(option_bar);
 
@@ -90,16 +79,24 @@
                         }]
                       };
                     myLineChart.setOption(option_line);
+                    //设置图片自适应窗口大小
+                    window.addEventListener("resize",function(){
+                        myBarChart.resize();
+                        myLineChart.resize();
+                    });
                 </script>
             </div>
             <!--堆叠图：每个行业不同月份职位分布-->
-            <div class="row" >
-                <div id="StackMaps" style="width: 100%;height: 400px;"></div>
+            <div>
+                <div class="card"id="StackMaps" style="width: 100%;height: 400px;"></div>
                 <script type="text/javascript">
+                    var item_list={{ jobType|safe }}
+                    {#var val_list={{ none }}#}
+
                     var  myStackMaps=echarts.init(document.getElementById('StackMaps'));
                     var option = {
                             title: {
-                                text: '不同行业职位月份统计'
+                                text: '行业职位月份统计'
                             },
                             tooltip : {
                                 trigger: 'axis',
@@ -111,7 +108,7 @@
                                 }
                             },
                             legend: {
-                                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                                data:item_list
                             },
                             toolbox: {
                                 feature: {
@@ -128,7 +125,7 @@
                                 {
                                     type : 'category',
                                     boundaryGap : false,
-                                    data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月']
+                                    data : ['4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月']
                                 }
                             ],
                             yAxis : [
@@ -137,36 +134,30 @@
                                 }
                             ],
                             series : [
+
                                 {
-                                    name:'邮件营销',
-                                    type:'line',
-                                    stack: '总量',
-                                    areaStyle: {},
-                                    data:[120, 132, 101, 134, 90, 230, 210]
-                                },
-                                {
-                                    name:'联盟广告',
+                                    name:'互联网IT',
                                     type:'line',
                                     stack: '总量',
                                     areaStyle: {},
                                     data:[220, 182, 191, 234, 290, 330, 310]
                                 },
                                 {
-                                    name:'视频广告',
+                                    name:'金融',
                                     type:'line',
                                     stack: '总量',
                                     areaStyle: {},
                                     data:[150, 232, 201, 154, 190, 330, 410]
                                 },
                                 {
-                                    name:'直接访问',
+                                    name:'房地产/建筑',
                                     type:'line',
                                     stack: '总量',
                                     areaStyle: {normal: {}},
                                     data:[320, 332, 301, 334, 390, 330, 320]
                                 },
                                 {
-                                    name:'搜索引擎',
+                                    name:'贸易/销售',
                                     type:'line',
                                     stack: '总量',
                                     label: {
@@ -177,31 +168,41 @@
                                     },
                                     areaStyle: {normal: {}},
                                     data:[820, 932, 901, 934, 1290, 1330, 1320]
-                                }
+                                },
+                                {
+                                    name:'教育/传媒/广告',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                },
+                                {
+                                    name:'服务业',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                },
+                                {
+                                    name:'市场/销售',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                },
+                                {
+                                    name:'人事/财务/行政',
+                                    type:'line',
+                                    stack: '总量',
+                                    areaStyle: {},
+                                    data:[120, 132, 101, 134, 90, 230, 210]
+                                },
                             ]
                         };
                     myStackMaps.setOption(option);
                 </script>
             </div>
-            <!--中国地图职位和城市分布-->
-            <div class="row" >
-            {# 还未申请百度地图API以及显示地图所需要的工具包        #}
-            {# {% include 'myapp/map-polygon.html' %}#}
-            </div>
 
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
-            <div class="row bg" ><h2>首页图表</h2></div>
         </div>
 
     </div>

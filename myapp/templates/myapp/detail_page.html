@@ -1,26 +1,177 @@
+{% extends 'myapp/home.html' %}
 {% load static %}
+{% block content %}
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+    <div class="content">
+        <div class="container-fluid">
+	        <div class="row">
+              <!--详细页(地图)-->
+              <div class="col-md-8">
+                <div class="card" id="container" style="width: 100%;height: 100% "></div>
+            </div>
 
+              <!--详细页右栏-->
+              <div class="col-md-4">
+                  <div class="card" id='right_top' style="height: 400px;width: 100%;padding: auto"></div>
+                  <div class="card" id='right_bottom' style="height: 400px;width: 100%;padding: auto"></div>
+              </div>
 
+              <!--底边栏-->
+            </div>
+            <div class="row">
+                <!--技术词云-->
+                <div class="col-md-4"></div>
+                <!--工作年限、薪资、技能要求、学历四个方面的关联-->
+                <div class="col-md-4"></div>
+                <!--Top10 职位数目排行-->
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //右侧栏操作
+        var right_top_chart = echarts.init(document.getElementById('right_top'));
+        var option_right_top = {
+            title : {
+                 text: '',
+                 subtext: ''
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+        data:['蒸发量','降水量']
+    },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+        },
+            calculable : true,
+            xAxis : [
+        {
+            type : 'category',
+            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+        }
+    ],
+            yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+            series : [
+        {
+            name:'蒸发量',
+            type:'bar',
+            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'降水量',
+            type:'bar',
+            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+    ]
+            };
+        right_top_chart.setOption(option_right_top);
 
-       <div id="container" style="width: 100%;height: 100% "></div>
-       <script type="text/javascript">
-            var key ={{ page_data|safe }}
-            var dom = document.getElementById("container");
-            var myChart = echarts.init(dom);
+        var right_bottom_chart=echarts.init(document.getElementById('right_bottom'));
+        var option_right_bottom = {
+            title : {
+                text: '',
+                subtext: '纯属虚构',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+        orient : 'vertical',
+        x : 'left',
+        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+    },
+            toolbox: {
+                show : false,
+                feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                show: true,
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+    },
+            calculable : true,
+            series : [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[
+                         {value:335, name:'直接访问'},
+                         {value:310, name:'邮件营销'},
+                         {value:234, name:'联盟广告'},
+                         {value:135, name:'视频广告'},
+                         {value:1548, name:'搜索引擎'}
+                         ]
+                }
+            ]
+        };
+        right_bottom_chart.setOption(option_right_bottom);
 
-            var option = null;
+        //右侧栏操作结束
 
-            var data = [
+        //左侧地图
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var data = [
             {name: '株洲', value: 143},
             {name: '石家庄', value: 147},
             {name: '莱芜', value: 148},
@@ -37,8 +188,7 @@
             {name: '武汉', value: 273},
             {name: '大庆', value: 279}
         ];
-
-            var geoCoordMap = {
+        var geoCoordMap = {
             '海门':[121.15,31.89],
             '鄂尔多斯':[109.781327,39.608266],
             '招远':[120.38,37.35],
@@ -230,8 +380,7 @@
             '武汉':[114.31,30.52],
             '大庆':[125.03,46.58]
         };
-
-            var convertData = function (data) {
+        var convertData = function (data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
                 var geoCoord = geoCoordMap[data[i].name];
@@ -244,10 +393,9 @@
             }
             return res;
         };
-
-            option = {
-    // backgroundColor: '#404a59',
-    title: {
+        var option = {
+       // backgroundColor: '#404a59',
+        title: {
         text: '全国主要城市空气质量',
         subtext: 'data from PM25.in',
         sublink: 'http://www.pm25.in',
@@ -256,10 +404,10 @@
             color: '#fff'
         }
     },
-    tooltip : {
+        tooltip : {
         trigger: 'item'
     },
-    bmap: {
+        bmap: {
         center: [104.114129, 37.550339],
         zoom: 5,
         roam: true,
@@ -396,7 +544,7 @@
             ]
         }
     },
-    series : [
+        series : [
         {
             name: 'pm2.5',
             type: 'scatter',
@@ -466,9 +614,16 @@
             z: -10
         }
     ]
-};
+        };
+        myChart.setOption(option);
 
-            if (option && typeof option === "object") {
-            myChart.setOption(option, true);
-            }
-        </script>
+        //左侧地图栏操作结束
+
+        window.addEventListener("resize",function(){
+                        myChart.resize();
+                        right_top_chart.resize();
+                        right_bottom_chart.resize();
+                    });
+    </script>
+
+{% endblock %}

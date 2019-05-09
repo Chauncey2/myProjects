@@ -74,6 +74,8 @@ WSGI_APPLICATION = 'myProjects.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+from mongoengine import connect
+connect("JobInfo")
 
 DATABASES = {
     'default': {
