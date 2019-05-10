@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="content">
-    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script
+    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script>
         <div class="container-fluid">
 
             <!--第一行：饼状图和折线图-->
@@ -12,7 +12,7 @@
                 <script type="text/javascript">
                     //接收视图函数传递过来的参数
                     var item_list = {{ jobType|safe }}
-                    var val_list={{ val_list|safe }}
+                    var val_list = {{ val_list|safe }}
 
                     var myBarChart = echarts.init(document.getElementById('main'));
                     //饼状图的配置项和数据

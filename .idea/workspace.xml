@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba02996-2011-4fb4-9db8-cf559c72ac50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/static/myapp/keywords.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/myapp/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/static/myapp/js/echarts/wordcloud/echarts-wordcloud.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/myProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myProjects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myProjects/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myProjects/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,36 +24,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="125" column="25" lean-forward="true" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
+            <state relative-caret-position="3500">
+              <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="140">
+              <caret line="771" selection-start-line="771" selection-end-line="771" />
               <folding>
-                <element signature="e#1548#1581#0#HTML" expanded="true" />
-                <element signature="e#1711#1758#0#HTML" expanded="true" />
-                <element signature="e#1793#1840#0#HTML" expanded="true" />
-                <element signature="e#2497#2531#0#HTML" />
-                <element signature="e#2546#2827#0#HTML" />
-                <element signature="e#2864#3006#0#HTML" />
-                <element signature="e#3020#3074#0#HTML" />
-                <element signature="e#3089#4100#0#HTML" />
-                <element signature="e#4061#5504#0#HTML" />
-                <element signature="e#4244#4350#0#HTML" />
-                <element signature="e#4519#4851#0#HTML" />
-                <element signature="e#4483#5064#0#HTML" />
-                <element signature="e#5092#11506#0#HTML" />
-                <element signature="e#11550#11946#0#HTML" />
-                <element signature="e#12013#12206#0#HTML" />
-                <element signature="e#12222#12253#0#HTML" />
-                <element signature="e#12265#17078#0#HTML" />
-                <element signature="e#17093#18933#0#HTML" />
+                <element signature="e#1434#1467#0#HTML" expanded="true" />
+                <element signature="e#1506#1553#0#HTML" expanded="true" />
+                <element signature="e#1615#1662#0#HTML" expanded="true" />
+                <element signature="e#1990#2055#0#HTML" expanded="true" />
+                <element signature="e#2225#2290#0#HTML" expanded="true" />
+                <element signature="e#2449#2514#0#HTML" expanded="true" />
+                <element signature="e#2221#4133#0#HTML" />
+                <element signature="e#4309#5897#0#HTML" />
+                <element signature="e#6109#6690#0#HTML" />
+                <element signature="e#6718#13132#0#HTML" />
+                <element signature="e#13176#13572#0#HTML" />
+                <element signature="e#13595#20592#0#HTML" />
+                <element signature="e#13650#13843#0#HTML" />
+                <element signature="e#13910#18723#0#HTML" />
+                <element signature="e#18742#20582#0#HTML" />
+                <element signature="e#21379#21636#0#HTML" />
+                <element signature="e#21757#25274#0#HTML" />
+                <element signature="e#22169#25194#0#HTML" />
+                <element signature="e#20702#20870#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -70,13 +63,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="43" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="43" />
+            <state relative-caret-position="112">
+              <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#script#0;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#script#0;n#div#1;n#div#0;n#div#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -107,10 +109,10 @@
         <option value="$PROJECT_DIR$/myapp/templates/myapp/test.html" />
         <option value="$PROJECT_DIR$/myapp/views.py" />
         <option value="$PROJECT_DIR$/myapp/urls.py" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" />
       </list>
     </option>
   </component>
@@ -125,6 +127,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,6 +150,13 @@
               <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
               <item name="myProjects" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -158,13 +168,13 @@
             </path>
             <path>
               <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhaopin_spider" type="462c0819:PsiDirectoryNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,16 +186,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp" />
-      <recent name="D:\pyWorkspace\myProjects\myapp\templates\myapp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp\js\echarts\wordcloud" />
       <recent name="D:\pyWorkspace\myProjects\myapp" />
       <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp\js\echarts" />
       <recent name="D:\pyWorkspace\myProjects\myapp\templates\myapp" />
       <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp\js" />
-      <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pyWorkspace\myProjects\myapp\static\myapp" />
+      <recent name="D:\pyWorkspace\myProjects\myapp\templates\myapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,6 +235,68 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="Zhaoping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <module name="Zhaoping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="Zhaoping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="Zhaoping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -244,7 +316,9 @@
       <workItem from="1557209779536" duration="8387000" />
       <workItem from="1557273941589" duration="14522000" />
       <workItem from="1557301530697" duration="10969000" />
-      <workItem from="1557362474129" duration="25523000" />
+      <workItem from="1557362474129" duration="27863000" />
+      <workItem from="1557408733617" duration="51000" />
+      <workItem from="1557451665429" duration="7477000" />
     </task>
     <task id="LOCAL-00001" summary="update code">
       <created>1557151935152</created>
@@ -260,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557237368408</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update code">
+      <created>1557400219597</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557400219598</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105787000" />
+    <option name="totallyTimeSpent" value="115655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,7 +361,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23525469" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2419571" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.33144477" />
@@ -508,32 +589,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html">
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#script#9;n#!!top" />
-            <element signature="e#1355#8458#0#HTML" />
-            <element signature="e#8487#14902#0#HTML" />
-            <element signature="e#14946#15342#0#HTML" />
-            <element signature="e#15355#22325#0#HTML" />
-          </folding>
+        <state relative-caret-position="3500">
+          <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
+    <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/echarts/wordcloud/echarts-wordcloud.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/echarts/wordcloud/echarts-wordcloud.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="125" column="25" lean-forward="true" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
+        <state relative-caret-position="140">
+          <caret line="771" selection-start-line="771" selection-end-line="771" />
+          <folding>
+            <element signature="e#1434#1467#0#HTML" expanded="true" />
+            <element signature="e#1506#1553#0#HTML" expanded="true" />
+            <element signature="e#1615#1662#0#HTML" expanded="true" />
+            <element signature="e#1990#2055#0#HTML" expanded="true" />
+            <element signature="e#2225#2290#0#HTML" expanded="true" />
+            <element signature="e#2449#2514#0#HTML" expanded="true" />
+            <element signature="e#2221#4133#0#HTML" />
+            <element signature="e#4309#5897#0#HTML" />
+            <element signature="e#6109#6690#0#HTML" />
+            <element signature="e#6718#13132#0#HTML" />
+            <element signature="e#13176#13572#0#HTML" />
+            <element signature="e#13595#20592#0#HTML" />
+            <element signature="e#13650#13843#0#HTML" />
+            <element signature="e#13910#18723#0#HTML" />
+            <element signature="e#18742#20582#0#HTML" />
+            <element signature="e#21379#21636#0#HTML" />
+            <element signature="e#21757#25274#0#HTML" />
+            <element signature="e#22169#25194#0#HTML" />
+            <element signature="e#20702#20870#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="43" />
+        <state relative-caret-position="112">
+          <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#script#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -542,30 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#1548#1581#0#HTML" expanded="true" />
-            <element signature="e#1711#1758#0#HTML" expanded="true" />
-            <element signature="e#1793#1840#0#HTML" expanded="true" />
-            <element signature="e#2497#2531#0#HTML" />
-            <element signature="e#2546#2827#0#HTML" />
-            <element signature="e#2864#3006#0#HTML" />
-            <element signature="e#3020#3074#0#HTML" />
-            <element signature="e#3089#4100#0#HTML" />
-            <element signature="e#4061#5504#0#HTML" />
-            <element signature="e#4244#4350#0#HTML" />
-            <element signature="e#4519#4851#0#HTML" />
-            <element signature="e#4483#5064#0#HTML" />
-            <element signature="e#5092#11506#0#HTML" />
-            <element signature="e#11550#11946#0#HTML" />
-            <element signature="e#12013#12206#0#HTML" />
-            <element signature="e#12222#12253#0#HTML" />
-            <element signature="e#12265#17078#0#HTML" />
-            <element signature="e#17093#18933#0#HTML" />
-          </folding>
+        <state relative-caret-position="364">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

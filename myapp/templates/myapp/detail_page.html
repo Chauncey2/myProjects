@@ -7,16 +7,18 @@
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=uSxRub0dslh3MXPZ40NsjLoe8bYP1pdt"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+    <script src="{% static 'myapp/js/echarts/wordcloud/echarts-wordcloud.min.js' %}"></script>
 
     <div class="content">
         <div class="container-fluid">
 	        <div class="row">
               <!--详细页(地图)-->
               <div class="col-md-8">
-                <div class="card" id="container" style="width: 100%;height: 100% "></div>
+                <div class="card" id="container" style="width: 100%;height:810px; "></div>
             </div>
 
               <!--详细页右栏-->
@@ -29,11 +31,19 @@
             </div>
             <div class="row">
                 <!--技术词云-->
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card" id="wordcloud" style="height: 400px;width: 100%;padding: auto;margin-top: 10px;">
+                        词云呢
+                    </div>
+                </div>
                 <!--工作年限、薪资、技能要求、学历四个方面的关联-->
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card" id="wordcloud" style="height: 400px;width: 100%;padding: auto;margin-top: 10px;"></div>
+                </div>
                 <!--Top10 职位数目排行-->
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card" id="wordcloud" style="height: 400px;width: 100%;padding: auto;margin-top: 10px;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,8 +59,8 @@
                 trigger: 'axis'
             },
             legend: {
-        data:['蒸发量','降水量']
-    },
+            data:['蒸发量','降水量']
+            },
             toolbox: {
                 show : false,
                 feature : {
@@ -616,14 +626,155 @@
     ]
         };
         myChart.setOption(option);
-
         //左侧地图栏操作结束
+
+        //词云
+        var worldcloudChart=echarts.init(document.getElementById('wordcloud'));
+        function createRandomItemStyle() {
+            return {
+                normal: {
+                    color: 'rgb(' + [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160)
+                 ].join(',') + ')'
+                }
+            };
+        }
+        var wordcloudOption = {
+            title: {
+                text: 'Google Trends'
+            },
+            tooltip: {
+                show: true
+            },
+            series: [{
+                name: 'Google Trends',
+                type: 'wordCloud',
+                size: ['80%', '80%'],
+                textRotation : [0, 45, 90, -45],
+                textPadding: 0,
+                autoSize: {
+                    enable: true,
+                    minSize: 14
+                },
+                data: [
+            {
+                name: "Sam S Club",
+                value: 10000,
+                itemStyle: {
+                    normal: {
+                        color: 'black'
+                    }
+                }
+            },
+            {
+                name: "Macys",
+                value: 6181,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Amy Schumer",
+                value: 4386,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Jurassic World",
+                value: 4055,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Charter Communications",
+                value: 2467,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Chick Fil A",
+                value: 2244,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Planet Fitness",
+                value: 1898,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Pitch Perfect",
+                value: 1484,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Express",
+                value: 1112,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Home",
+                value: 965,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Johnny Depp",
+                value: 847,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Lena Dunham",
+                value: 582,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Lewis Hamilton",
+                value: 555,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "KXAN",
+                value: 550,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Mary Ellen Mark",
+                value: 462,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Farrah Abraham",
+                value: 366,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Rita Ora",
+                value: 360,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Serena Williams",
+                value: 282,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "NCAA baseball tournament",
+                value: 273,
+                itemStyle: createRandomItemStyle()
+            },
+            {
+                name: "Point Break",
+                value: 265,
+                itemStyle: createRandomItemStyle()
+            }
+        ]
+             }]
+        };
+        worldcloudChart.setOption(wordcloudOption);
+        //词云操作结束
+
 
         window.addEventListener("resize",function(){
                         myChart.resize();
                         right_top_chart.resize();
                         right_bottom_chart.resize();
+                        worldcloudChart.resize()
                     });
     </script>
-
 {% endblock %}
