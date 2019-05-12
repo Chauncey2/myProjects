@@ -4,7 +4,13 @@
     <list default="true" id="1ba02996-2011-4fb4-9db8-cf559c72ac50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/layouts-fixed-header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/layouts-fixed-sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/layouts-hidden-sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/layouts-normal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,20 +23,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3500">
-              <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
+            <state relative-caret-position="171">
+              <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="1090">
+              <caret line="366" column="21" selection-start-line="366" selection-start-column="21" selection-end-line="366" selection-end-column="21" />
+              <folding>
+                <element signature="e#1853#2612#0#HTML" />
+                <element signature="e#2498#2563#0#HTML" expanded="true" />
+                <element signature="e#2600#2665#0#HTML" expanded="true" />
+                <element signature="e#2810#2875#0#HTML" expanded="true" />
+                <element signature="e#3204#3869#0#HTML" />
+                <element signature="e#4904#6492#0#HTML" />
+                <element signature="e#6704#7285#0#HTML" />
+                <element signature="e#7313#13727#0#HTML" />
+                <element signature="e#13771#14167#0#HTML" />
+                <element signature="e#14190#21187#0#HTML" />
+                <element signature="e#14395#14432#0#HTML" />
+                <element signature="e#14458#14489#0#HTML" />
+                <element signature="e#19337#21177#0#HTML" />
+                <element signature="e#21379#21713#0#HTML" />
+                <element signature="e#21744#25287#0#HTML" />
+                <element signature="e#24141#24185#0#HTML" />
+                <element signature="e#28685#31385#0#HTML" />
+                <element signature="e#25610#25669#0#HTML" />
+                <element signature="e#25681#25778#0#HTML" />
+                <element signature="e#25792#25821#0#HTML" />
+                <element signature="e#25834#25908#0#HTML" />
+                <element signature="e#25922#27413#0#HTML" />
+                <element signature="e#31510#32753#0#HTML" />
+                <element signature="e#31558#32883#0#HTML" />
+                <element signature="e#25411#25628#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#198#306#0" />
+                <element signature="e#333#1048#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,19 +132,20 @@
         <option value="$PROJECT_DIR$/myProjects/settings.py" />
         <option value="$PROJECT_DIR$/myapp/models.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/test.html" />
-        <option value="$PROJECT_DIR$/myapp/views.py" />
-        <option value="$PROJECT_DIR$/myapp/urls.py" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/map-polygon.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" />
+        <option value="$PROJECT_DIR$/myapp/views.py" />
+        <option value="$PROJECT_DIR$/myapp/urls.py" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -94,7 +154,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,7 +309,7 @@
       <workItem from="1557362474129" duration="27863000" />
       <workItem from="1557408733617" duration="51000" />
       <workItem from="1557451665429" duration="8060000" />
-      <workItem from="1557625979816" duration="2667000" />
+      <workItem from="1557625979816" duration="13444000" />
     </task>
     <task id="LOCAL-00001" summary="update code">
       <created>1557151935152</created>
@@ -269,11 +339,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557487977598</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update code">
+      <created>1557647441979</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557647441979</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118905000" />
+    <option name="totallyTimeSpent" value="129682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,12 +363,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24530831" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18431635" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.33144477" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.33144477" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="4" weight="0.3286119" />
@@ -485,30 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#202#249#0" />
-            <element signature="e#276#931#0" />
-            <element signature="e#1086#1136#0" />
-            <element signature="e#356#414#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/layouts-fixed-header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -519,13 +573,6 @@
     <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/echarts/wordcloud/echarts-wordcloud.js" />
     <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/echarts/wordcloud/echarts-wordcloud.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3500">
-          <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -558,8 +605,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="1090">
+          <caret line="366" column="21" selection-start-line="366" selection-start-column="21" selection-end-line="366" selection-end-column="21" />
+          <folding>
+            <element signature="e#1853#2612#0#HTML" />
+            <element signature="e#2498#2563#0#HTML" expanded="true" />
+            <element signature="e#2600#2665#0#HTML" expanded="true" />
+            <element signature="e#2810#2875#0#HTML" expanded="true" />
+            <element signature="e#3204#3869#0#HTML" />
+            <element signature="e#4904#6492#0#HTML" />
+            <element signature="e#6704#7285#0#HTML" />
+            <element signature="e#7313#13727#0#HTML" />
+            <element signature="e#13771#14167#0#HTML" />
+            <element signature="e#14190#21187#0#HTML" />
+            <element signature="e#14395#14432#0#HTML" />
+            <element signature="e#14458#14489#0#HTML" />
+            <element signature="e#19337#21177#0#HTML" />
+            <element signature="e#21379#21713#0#HTML" />
+            <element signature="e#21744#25287#0#HTML" />
+            <element signature="e#24141#24185#0#HTML" />
+            <element signature="e#28685#31385#0#HTML" />
+            <element signature="e#25610#25669#0#HTML" />
+            <element signature="e#25681#25778#0#HTML" />
+            <element signature="e#25792#25821#0#HTML" />
+            <element signature="e#25834#25908#0#HTML" />
+            <element signature="e#25922#27413#0#HTML" />
+            <element signature="e#31510#32753#0#HTML" />
+            <element signature="e#31558#32883#0#HTML" />
+            <element signature="e#25411#25628#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#198#306#0" />
+            <element signature="e#333#1048#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
         </state>
       </provider>
     </entry>

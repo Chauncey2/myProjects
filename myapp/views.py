@@ -43,19 +43,6 @@ def index(request):
     })
 
 
-def nomepage(request):
-    return render(request,'myapp/layouts-normal.html')
-
-def hidden_sidebar(request):
-    return render(request,'myapp/layouts-hidden-sidebar.html')
-
-def fixed_sidebar(request):
-    return render(request,'myapp/layouts-fixed-sidebar.html')
-
-def fixed_header(request):
-    return render(request,'myapp/layouts-fixed-header.html')
-
-
 def test(request):
     keys=list()
     with open('./myapp/static/myapp/keywords.json','r',encoding='utf-8') as f:

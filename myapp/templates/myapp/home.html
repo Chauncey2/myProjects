@@ -36,38 +36,11 @@
 
                     <!--互联网行业下拉框-->
                     <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">
-                            <i class="icon icon-target"></i> 互联网IT <i class="fa fa-caret-left"></i>
+                        <a href="{% url 'myapp:detail_page' %}" class="nav-link">
+                            <i class="icon icon-target"></i> 互联网IT
                         </a>
 
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a href="{% url 'myapp:normal' %}" class="nav-link">
-                                    <i class="icon icon-target"></i> 城市分布统计
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{% url 'myapp:fixed_sidebar' %}" class="nav-link">
-                                    <i class="icon icon-target"></i> 全国分布
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{% url 'myapp:fixed_header' %}" class="nav-link">
-                                    <i class="icon icon-target"></i> 主流编程语言统计
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{% url 'myapp:hidden' %}" class="nav-link">
-                                    <i class="icon icon-target"></i> 平均薪资
-                                </a>
-                            </li>
-                        </ul>
-
                     </li>
-
                     <!--金融行业下拉框-->
                     <li class="nav-item nav-dropdown">
                         <a href="{% url 'myapp:detail_page' %}" class="nav-link">
