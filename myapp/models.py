@@ -16,4 +16,4 @@ class zhilian(mongoengine.Document):
     infoComLink = mongoengine.StringField()
     positionUrl = mongoengine.StringField()
     extractSkillTag = mongoengine.ListField()
-
+    releaseTime=mongoengine.StringField()

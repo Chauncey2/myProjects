@@ -8,7 +8,7 @@
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己动手丰衣足食"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己申请一个"></script>
     <script type="text/javascript"
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
@@ -53,7 +53,6 @@
                 <div class="col-md-6">
                     <div class="card" id="salaryAndLevel"
                          style="height: 600px;width: 100%;padding: auto;margin-top: 10px;">
-                        <h1>薪资与工作年限分布，用柱状图与折线图混搭的样式</h1>
                     </div>
                 </div>
             </div>
@@ -61,6 +60,10 @@
     </div>
     <script type="text/javascript">
         //右侧栏操作
+        var city_data={{ right_top|safe }};
+        var city=city_data[0];
+
+        var num=city_data[1];
         var right_top_chart = echarts.init(document.getElementById('right_top'));
         var option_right_top = {
             title: {
@@ -87,24 +90,29 @@
             yAxis: {
                 type: 'category',
                 // 数据根据后端数据库读出来的值填充
-                data: ['巴西', '印尼', '美国', '印度', '中国', '世界']
+                data: city,
             },
             series: [
                 {
-                    name: '2012年',
+                    name: '2019年',
                     type: 'bar',
                     // 数据根据后端数据库读出来的值填充
-                    data: [19325, 23438, 31000, 121594, 134141, 681807]
+                    data: num,
                 }
             ]
         };
         right_top_chart.setOption(option_right_top);
 
+
         //饼状图
+        var pie_data={{ right_bottom|safe }};
+        var city_pie=pie_data[0];
+        var city_num_pie=pie_data[1];
+
         var right_bottom_chart = echarts.init(document.getElementById('right_bottom'));
         var option_right_bottom = {
             title: {
-                text: '职位构成',
+                text: 'Top5城市职位数构成比',
                 x: 'center'
             },
             tooltip: {
@@ -115,7 +123,7 @@
                 orient: 'vertical',
                 x: 'left',
                 // 用后端读出的工作类别进行填充
-                data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                data: city_pie
             },
 
             calculable: true,
@@ -125,13 +133,7 @@
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
-                    data: [
-                        {value: 335, name: '直接访问'},
-                        {value: 310, name: '邮件营销'},
-                        {value: 234, name: '联盟广告'},
-                        {value: 135, name: '视频广告'},
-                        {value: 1548, name: '搜索引擎'}
-                    ]
+                    data: city_num_pie
                 }
             ]
         };
@@ -142,23 +144,9 @@
         //左侧地图
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
-        var data = [
-            {name: '株洲', value: 143},
-            {name: '石家庄', value: 147},
-            {name: '莱芜', value: 148},
-            {name: '常德', value: 152},
-            {name: '保定', value: 153},
-            {name: '湘潭', value: 154},
-            {name: '金华', value: 157},
-            {name: '岳阳', value: 169},
-            {name: '长沙', value: 175},
-            {name: '衢州', value: 177},
-            {name: '廊坊', value: 193},
-            {name: '菏泽', value: 194},
-            {name: '合肥', value: 229},
-            {name: '武汉', value: 273},
-            {name: '大庆', value: 279}
-        ];
+
+        var data ={{ map_data|safe }};
+
         var geoCoordMap = {
             '海门': [121.15, 31.89],
             '鄂尔多斯': [109.781327, 39.608266],
@@ -354,15 +342,17 @@
         var convertData = function (data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
-                var geoCoord = geoCoordMap[data[i].name];
+                var geoCoord = geoCoordMap[data[i]._id];
                 if (geoCoord) {
                     res.push({
-                        name: data[i].name,
+                        name: data[i]._id,
                         value: geoCoord.concat(data[i].value)
                     });
                 }
             }
+            console.log(res);
             return res;
+
         };
         var option = {
             title: {
@@ -514,7 +504,7 @@
             },
             series: [
                 {
-                    name: 'pm2.5',
+                    name: '职位数',
                     type: 'scatter',
                     coordinateSystem: 'bmap',
                     data: convertData(data),
@@ -587,6 +577,7 @@
         //左侧地图栏操作结束
 
         //词云
+        var word_data={{ word_cloud_data|safe }};
         var worldcloudChart = echarts.init(document.getElementById('wordcloud'));
 
         function createRandomItemStyle() {
@@ -600,6 +591,7 @@
                 }
             };
         }
+
         var wordcloudOption = {
             title: {
                 text: '职业技能'
@@ -608,7 +600,7 @@
                 show: true
             },
             series: [{
-                name: 'Google Trends',
+                name: '技术词云',
                 type: 'wordCloud',
                 size: ['80%', '80%'],
                 textRotation: [0, 45, 90, -45],
@@ -617,118 +609,14 @@
                     enable: true,
                     minSize: 14
                 },
-                data: [
-                    {
-                        name: "Sam S Club",
-                        value: 10000,
-                        itemStyle: {
-                            normal: {
-                                color: 'black'
-                            }
-                        }
-                    },
-                    {
-                        name: "Macys",
-                        value: 6181,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Amy Schumer",
-                        value: 4386,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Jurassic World",
-                        value: 4055,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Charter Communications",
-                        value: 2467,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Chick Fil A",
-                        value: 2244,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Planet Fitness",
-                        value: 1898,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Pitch Perfect",
-                        value: 1484,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Express",
-                        value: 1112,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Home",
-                        value: 965,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Johnny Depp",
-                        value: 847,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Lena Dunham",
-                        value: 582,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Lewis Hamilton",
-                        value: 555,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "KXAN",
-                        value: 550,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Mary Ellen Mark",
-                        value: 462,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Farrah Abraham",
-                        value: 366,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Rita Ora",
-                        value: 360,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Serena Williams",
-                        value: 282,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "NCAA baseball tournament",
-                        value: 273,
-                        itemStyle: createRandomItemStyle()
-                    },
-                    {
-                        name: "Point Break",
-                        value: 265,
-                        itemStyle: createRandomItemStyle()
-                    }
-                ]
+                //后端读取数据进行显示
+                data: word_data
             }]
         };
         worldcloudChart.setOption(wordcloudOption);
         //词云操作结束
 
-        //TOP5排名
+        //TOP5城市职位构成排名
         var top5Chart=echarts.init(document.getElementById('sort'));
         var top5option = {
             title:{
@@ -741,6 +629,7 @@
                 }
             },
             legend: {
+                // 职位名称
                 data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
             },
             grid: {
@@ -754,8 +643,10 @@
             },
             yAxis: {
                 type: 'category',
+                //city列表
                 data: ['周一', '周二', '周三', '周四', '周五']
             },
+            //{name：城市名，...label:{一些操作},data:列表,和}
             series: [
                 {
                     name: '直接访问',
@@ -823,8 +714,15 @@
         //TOP5排名 结束
 
         //薪资和工作年限的关系
+        var salary_exp={{ salary_exp|safe }};
+        var exp_job_num=salary_exp[0]["exp_job_num"];
+        var exp_average_salary=salary_exp[1]["exp_average_salary"];
+
         var yearAndsalaryChart=echarts.init(document.getElementById('salary'))
         var yearAndsalaryOption = {
+             title: {
+                text: '工作经验与薪资相关分析',
+            },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -836,7 +734,7 @@
             },
 
             legend: {
-                data: ['蒸发量', '平均温度']
+                data: ['工作经验', '平均薪资']
             },
             xAxis: [
                 {
@@ -853,7 +751,6 @@
                     type: 'value',
                     name: '职位数',
                     min: 0,
-                    max: 250,
                     interval: 50,
                     axisLabel: {
                         formatter: '{value} '
@@ -863,24 +760,23 @@
                     type: 'value',
                     name: '薪资',
                     min: 0,
-                    max: 25,
-                    interval: 5,
+                    interval: 5000,
                     axisLabel: {
-                        formatter: '{value}K '
+                        formatter: '{value}元'
                     }
                 }
             ],
             series: [
                 {
-                    name: '蒸发量',
+                    name: '工作经验',
                     type: 'bar',
-                    data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
+                    data: exp_job_num
                 },
                 {
-                    name: '平均温度',
+                    name: '平均薪资',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3]
+                    data: exp_average_salary
                 }
             ]
         };
@@ -888,6 +784,11 @@
         //薪资和工作年限的关系操作结束
 
         // 学历与薪资关系分布图
+
+        var salary_edu={{ salary_exp|safe }};
+        var edu_job_num=salary_edu[0]["edu_job_num"];
+        var edu_average_salary=salary_edu[1]["edu_average_salary"];
+
         var salaryAndLevelChart=echarts.init(document.getElementById("salaryAndLevel"));
         var SL_option = {
             title: {
@@ -919,30 +820,37 @@
             ],
             yAxis: [
                 {
-                    type: 'value'
+                    type: 'value',
+                    name: '职位数',
+                    min: 0,
+                    interval: 50,
+                    axisLabel: {
+                        formatter: '{value} '
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '薪资',
+                    min: 0,
+                    interval: 5000,
+                    axisLabel: {
+                        formatter: '{value}元'
+                    }
                 }
             ],
             series: [
                 {
-                    name: '平均薪资',
-                    type: 'bar',
-                    data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2],
-
-                    markLine: {
-                        data: [
-                            {type: 'average', name: '平均值'}
-                        ]
-                    }
-                },
-                {
                     name: '职位总数',
                     type: 'bar',
-                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2],
-                    markLine: {
-                        data: [
-                            {type: 'average', name: '平均值'}
-                        ]
-                    }
+                    data: [70, 5, 21, 0, 157, 222, 50, 1],
+
+                },
+                {
+                    name: '平均薪资',
+                    type: 'bar',
+                    data:[8421, 6250, 5511, 0, 8096, 11557, 13425, 15000] ,
+
+
                 }
             ]
         };
