@@ -8,12 +8,13 @@
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己申请一个"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=百度开发者申请免费"></script>
     <script type="text/javascript"
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
     <script src="{% static 'myapp/js/echarts/wordcloud/echarts-wordcloud.min.js' %}"></script>
+
 
     <div class="content">
         <div class="container-fluid">
@@ -718,7 +719,7 @@
         var exp_job_num=salary_exp[0]["exp_job_num"];
         var exp_average_salary=salary_exp[1]["exp_average_salary"];
 
-        var yearAndsalaryChart=echarts.init(document.getElementById('salary'))
+        var yearAndsalaryChart=echarts.init(document.getElementById('salary'));
         var yearAndsalaryOption = {
              title: {
                 text: '工作经验与薪资相关分析',
@@ -785,37 +786,36 @@
 
         // 学历与薪资关系分布图
 
-        var salary_edu={{ salary_exp|safe }};
+        var salary_edu={{ salary_level|safe }};
         var edu_job_num=salary_edu[0]["edu_job_num"];
         var edu_average_salary=salary_edu[1]["edu_average_salary"];
 
         var salaryAndLevelChart=echarts.init(document.getElementById("salaryAndLevel"));
         var SL_option = {
-            title: {
-                text: '学历与薪资相关分析',
+             title: {
+                text: '工作经验与薪资相关分析',
             },
             tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['平均薪资', '职位总数']
-            },
-            toolbox: {
-                show: false,
-                feature: {
-                    mark: {show: true},
-                    dataView: {show: true, readOnly: false},
-                    magicType: {show: true, type: ['line', 'bar']},
-                    restore: {show: true},
-                    saveAsImage: {show: true}
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    crossStyle: {
+                        color: '#999'
+                    }
                 }
             },
-            calculable: true,
+
+            legend: {
+                data: ['职位数', '薪资']
+            },
             xAxis: [
                 {
                     type: 'category',
-                    //不限、中技、高中、硕士、中专、 博士、本科、大专‘
-                    data: ['不限', '中技', '中专', '高中', '大专', '本科', '硕士', '博士']
+                    //不限、无经验、1年以下、1-3年、3-5年、5-10年、10年以上
+                    data: ['不限', '中技', '中专', '高中', '大专', '本科', '硕士', '博士'],
+                    axisPointer: {
+                        type: 'shadow'
+                    }
                 }
             ],
             yAxis: [
@@ -840,17 +840,37 @@
             ],
             series: [
                 {
-                    name: '职位总数',
+                    name: '职位数',
                     type: 'bar',
-                    data: [70, 5, 21, 0, 157, 222, 50, 1],
-
+                    data: edu_job_num,
+                    markPoint:{
+                      data:[
+                          {type:'max',name:'最大值'},
+                          {type:'min',name:'最小值'}
+                      ]
+                    },
+                    markLine:{
+                        data:[
+                            {type:'average',name:'平均值'}
+                        ]
+                    }
                 },
                 {
-                    name: '平均薪资',
+                    name: '薪资',
                     type: 'bar',
-                    data:[8421, 6250, 5511, 0, 8096, 11557, 13425, 15000] ,
-
-
+                    yAxisIndex: 1,
+                    data: edu_average_salary,
+                    markPoint:{
+                      data:[
+                          {type:'max',name:'最大值'},
+                          {type:'min',name:'最小值'}
+                      ]
+                    },
+                    markLine:{
+                        data:[
+                            {type:'average',name:'平均值'}
+                        ]
+                    }
                 }
             ]
         };

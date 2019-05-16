@@ -34,29 +34,28 @@ def index(request):
     :return:
     '''
 
-    # keys = list()
-    # with open('./myapp/static/myapp/keywords.json', 'r', encoding='utf-8') as f:
-    #     keys = json.loads(f.read())
-    #
-    # jobType = list()
-    # for item in range(len(keys)):
-    #     jobType.append(keys[item]['Industy_name'])
-    #
-    # sum = 0
-    # data_list=[]
-    # for i in range(len(keys)):
-    #     for key in keys[0]['Job_keywords']:
-    #         result = zhilian.objects(jobType__icontains=key).count()
-    #         sum += result
-    #     val={'value':sum,'name':jobType[i]}
-    #     data_list.append(val)
+    data=index_data()
+    print(data)
+
+    # 地图数据
+    map_data=data[0]
+
+    # 右侧上部柱状图数据
+    ringt_top_data=data[1]
+    # print(ringt_top_data)
+
+    # 右侧下部数据
+    right_bottom_data=data[2]
+
+
 
     return render(request, 'myapp/index.html',context={
-        'jobType':None,
-        'val_list':None
+        'map_data':map_data,
+        'ringt_top_data':ringt_top_data,
+        'right_bottom_data':right_bottom_data,
     })
 
-@cache_page(24*3600)
+# @cache_page(24*3600)
 def detail(request,page):
     '''
     详情页视图函数
@@ -89,6 +88,8 @@ def detail(request,page):
 
     # 学历与薪资
     salary_level=level_salary(page)
+    # print(salary_level)
+
 
     return render(request,'myapp/detail_page.html',{
         'map_data':mapData,
@@ -100,22 +101,6 @@ def detail(request,page):
         'salary_level':salary_level
     })
 
-
-def createQ(page):
-    """
-    动态构造Q对象
-    :param page: 页面标识
-    :return: Q对象列表
-    """
-
-    key_list=jobKey[page]
-    Q_list=[]
-    for item in key_list:
-        q=Q(jobType__icontains=item) # 需要转接变量，内存中开辟新地址
-        Q_list.append(q)
-    return Q_list
-
-
 def test(request):
     keys=list()
     with open('./myapp/static/myapp/keywords.json','r',encoding='utf-8') as f:
@@ -126,9 +111,7 @@ def test(request):
         sum += result
 
     job_data_all = zhilian.objects.values_list('city')
-    # print(job_data_all.query)
     data=job_data_all.count()
-    print(data)
-    # print(dir(zhilian.objects))
+
     return render(request,'myapp/test.html')
 

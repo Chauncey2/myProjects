@@ -36,7 +36,65 @@ jobNameKey={
 }
 
 def index_data():
-    pass
+    conn = conn = MongoClient(HOST, PORT)
+    db = conn[DATABASE_NAME]
+    mycollection = db.zhilian
+
+    # 根据城市进行分组，获取城市职位数目数据,返回数组游标
+    pipline=[
+        {"$group":{"_id":"$city","count":{"$sum":1}}}
+    ]
+    cursor=mycollection.aggregate(pipline)
+
+    # 遍历游标，获取职位数据
+    result_map=[]
+    for item in cursor:
+        data={"name":item['_id'],"value":item['count']}
+        result_map.append(data)
+
+    # 对城市进行排序，输出前一百条数据
+    result_map=sorted(result_map,key=operator.itemgetter('value'))[-100:]
+
+    # 获取dataAxis值和data1
+    dataAxis=[]
+    data1=[]
+    for i in range(len(result_map)):
+        dataAxis.append(result_map[i]['name'])
+        data1.append(result_map[i]['value'])
+
+    # 获取数据最大值
+    yMax=np.max(data1)
+
+    # 柱状图数据（封装为list）
+    result_bar=[dataAxis,data1,yMax]
+    result=[result_map,result_bar]
+
+    # 获取饼状图数据
+    pipline_pie=[
+        {"$group":{"_id":"$jobType","count":{"$sum":1}}}
+    ]
+    cursor2=mycollection.aggregate(pipline_pie)
+    pie_jobType_list=['互联网','金融','房地产/建筑','贸易/销售','教育/传媒','服务业','市场/销售','人事/行政']
+    temp_cursor2=[]
+
+    # 游标是一次迭代，要不可回退，因此要用临时变量存储
+    for item in cursor2:
+        temp_cursor2.append(item)
+
+    pie_dict_data=[]
+    for i in range(len(pie_jobType_list)):
+        value=0
+        for item in temp_cursor2:
+            if judge_contain_str(item["_id"],i):
+                value+=item['count']
+        data={"value":value,"name":pie_jobType_list[i]}
+        pie_dict_data.append(data)
+
+    result_pie=[pie_jobType_list,pie_dict_data]
+    result.append(result_pie)
+
+    conn.close()
+    return result
 
 
 def get_map_data(page):
@@ -182,8 +240,6 @@ def top5CityNum(page):
         data={"city":city,"jobName":temp_data_groupby_city}
         group_by_city.append(data)
 
-    for i in group_by_city:
-        print(i)
     # 对每个城市的工作进行统计，统计前五中类型的工作
     city_list=[]
     city_job_list=[]
@@ -200,7 +256,6 @@ def top5CityNum(page):
 
     for i in city_job_list:
         print(i)
-
 
     conn.close()
 
@@ -235,7 +290,6 @@ def exp_salary(page):
                     data = {"exp": item["_id"]["exp"], "salary": int(average_salary)}
                     exp_salary_list.append(data)
                 else:
-                    print(type(item["_id"]["salary"]))
                     salary_list = np.array(item["_id"]["salary"], dtype='float_')
                     average_salary = np.mean(salary_list)  # 用numpy库计算平均薪资
                     data = {"exp": item["_id"]["exp"], "salary": int(average_salary)}
@@ -387,6 +441,6 @@ def judge_contain_str(jobType,page):
 
 if __name__ == '__main__':
 
-    print(level_salary(0))
-
+    # print(index_data())
+    index_data()
 
