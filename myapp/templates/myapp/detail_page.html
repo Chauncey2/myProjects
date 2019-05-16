@@ -8,7 +8,7 @@
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=百度开发者申请免费"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己申请"></script>
     <script type="text/javascript"
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
@@ -34,14 +34,14 @@
             </div>
             <div class="row">
                 <!--技术词云-->
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card" id="wordcloud" style="height: 400px;width: 100%;padding: auto;margin-top: 10px;">
 
                     </div>
                 </div>
                 <!--Top5 职位数目排行-->
-                <div class="col-md-8">
-                    <div class="card" id="sort"
+                <div class="col-md-6">
+                    <div class="card" id="Top5job"
                          style="height: 400px;width: 100%;padding: auto;margin-top: 10px;"></div>
                 </div>
             </div>
@@ -617,98 +617,31 @@
         worldcloudChart.setOption(wordcloudOption);
         //词云操作结束
 
-        //TOP5城市职位构成排名
-        var top5Chart=echarts.init(document.getElementById('sort'));
+        //Top5工作柱状图
+        var top5JobData={{ top5JobNum|safe }};
+        var jobName=top5JobData[0];
+        var jobNum=top5JobData[1];
+
+        var top5Chart=echarts.init(document.getElementById('Top5job'));
         var top5option = {
-            title:{
-                text:'城市职位数据排名'
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    // 视图函数调用db模块进行数据读写
+                    jobName,
+                    jobNum,
+
+                ]
             },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                }
-            },
-            legend: {
-                // 职位名称
-                data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: {
-                type: 'value'
-            },
-            yAxis: {
-                type: 'category',
-                //city列表
-                data: ['周一', '周二', '周三', '周四', '周五']
-            },
-            //{name：城市名，...label:{一些操作},data:列表,和}
+            xAxis: {type: 'category'},
+            yAxis: {},
             series: [
-                {
-                    name: '直接访问',
-                    type: 'bar',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'insideRight'
-                        }
-                    },
-                    data: [320, 302, 301, 334, 390]
-                },
-                {
-                    name: '邮件营销',
-                    type: 'bar',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'insideRight'
-                        }
-                    },
-                    data: [120, 132, 101, 134, 90]
-                },
-                {
-                    name: '联盟广告',
-                    type: 'bar',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'insideRight'
-                        }
-                    },
-                    data: [220, 182, 191, 234, 290]
-                },
-                {
-                    name: '视频广告',
-                    type: 'bar',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'insideRight'
-                        }
-                    },
-                    data: [150, 212, 201, 154, 190]
-                },
-                {
-                    name: '搜索引擎',
-                    type: 'bar',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'insideRight'
-                        }
-                    },
-                    data: [820, 832, 901, 934, 1290]
-                }
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'}
             ]
         };
         top5Chart.setOption(top5option);

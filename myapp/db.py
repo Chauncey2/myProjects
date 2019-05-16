@@ -1,12 +1,12 @@
 from pymongo import *
 import operator
 import numpy as np
+import re
 
 HOST='127.0.0.1'
 PORT=27017
 DATABASE_NAME='JobInfo'
 COLLECTION_NAME='zhilian'
-
 
 
 # 每个行业的关键字参数
@@ -23,7 +23,7 @@ jobKey={
 
 # 每个行业的工作职位名称关键字
 jobNameKey={
-    0:['java','ui','前端','PHP','Python','Android','算法','数据分析','人工智能','电气','电子','测试','硬件'
+    0:['java','ui','web','前端','net','PHP','python','android','算法','数据分析','人工智能','电气','电子','测试','硬件'
         ,'深度学习','知识图谱','数据挖掘','机器学习','运营','大数据'],
     1:['金融','投资','银行','证券','财产','理财','审计','信托','期货','操盘手','基金','精算','保险'],
     2:['房地产','建筑','土木','工业','化工','土建','施工','电气','物业'],
@@ -201,70 +201,61 @@ def wordCloud(page):
     return result
 
 
-def top5CityNum(page):
-    # 获取数据库连接
+def getTop5JobNum(page):
+    # 连接数据库
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
     mycollection = db.zhilian
 
-    # 获取前五城市
-    top5_city_name=top5level(page)[0]
-
-    pipline=[
-        {'$group': {'_id': {'jobName':'$jobName','jobType':'$jobType','city':'$city'}}}
+    piplne=[
+        {'$group': {'_id': {'jobType':'$jobType','jobName':'$jobName'},"count":{"$sum":1}}}
     ]
-    cursor =mycollection.aggregate(pipline)
+    cursor=mycollection.aggregate(piplne)
 
-    # 先获取Top5的职位信息
-    temp_data_city=[]
+    temp_cursor=[]
     for item in cursor:
-        for city in top5_city_name:
-            if city == item["_id"]["city"]:
-                temp_data_city.append(item)
+        temp_cursor.append(item)
 
-     # 再对Top5的职业进行分类，筛选出符合page页的数据集
-    temp_data_job=[]
-    for item in temp_data_city:
+    # 筛选对应工作中类的数据
+    jobType_data=[]
+    for item in temp_cursor:
         if judge_contain_str(item["_id"]["jobType"],page):
-            data={"jobName":item["_id"]["jobName"],"city":item["_id"]["city"]}
-            temp_data_job.append(data)
+            data={"jobName":item["_id"]["jobName"],"value":item["count"]}
+            jobType_data.append(data)
 
-    # 对工作名称进行技术，以城市进行分组
-    # 首先根据城市进行分组，把一个城市的所有职位放在一起
-    group_by_city=[]
-    for city in top5_city_name:
-        temp_data_groupby_city=[]
-        for item in temp_data_job:
-            if item["city"] == city:
-                temp_data_groupby_city.append(item["jobName"])
-        data={"city":city,"jobName":temp_data_groupby_city}
-        group_by_city.append(data)
-
-    # 对每个城市的工作进行统计，统计前五中类型的工作
-    city_list=[]
-    city_job_list=[]
-
+    result_dict=[]
     for jk in jobNameKey[page]:
-        for item in group_by_city:
-            city_list.append(item["city"])
-            value=0
-            for job in item["jobName"]:
-                if job.__contains__(jk):
-                    value+=1
-            data={"jobName":jk,"value":value}
-            city_job_list.append(data)
+        value=0
+        for item in jobType_data:
+            if judge_jobName_str(item['jobName'],jk):
+               value+=item['value']
+        data={'jobName':jk,'value':value}
+        result_dict.append(data)
 
-    for i in city_job_list:
-        print(i)
+    # 如何合并教育产业中，教师和老师的值？
+    if page==4:
+        value=0
+        temp=result_dict
+        for item in temp:
+            if item['jobName']=='老师' or item["jobName"]=="教师":
+                value+=item['value']
+                result_dict.remove(item)
+        data={"jobName":"教师","value":value}
+        result_dict.append(data)
 
+    # 对获取结果进行排序
+    result_dict=sorted(result_dict,key=operator.itemgetter("value"))[-5:]
+
+    jobNameList=['product']
+    value=['Top5职位']
+    for item in result_dict:
+        jobNameList.append(item["jobName"])
+        value.append(item["value"])
+
+
+    result=[jobNameList,value]
     conn.close()
-
-
-def judge_contain_jobstr(jobName,page):
-    for i in jobNameKey[page]:
-        if jobName.__contains__(i):
-            return True
-    return False
+    return result
 
 
 def exp_salary(page):
@@ -341,6 +332,7 @@ def exp_salary(page):
     conn.close()
 
     return result
+
 
 def level_salary(page):
     conn = conn = MongoClient(HOST, PORT)
@@ -428,6 +420,21 @@ def level_salary(page):
     conn.close()
     return result
 
+def judge_jobName_str(jobName,jk):
+    pattern_str=jk
+    regx = re.compile(pattern_str, re.I)
+    if regx.search(jobName) is not None:
+        return True
+    return False
+
+
+def judge_contain_jobstr(jobName,page):
+    for i in jobNameKey[page]:
+        if jobName.__contains__(i):
+            return True
+    return False
+
+
 def judge_contain_str(jobType,page):
     # 对数据根据八个类别进行分组
     for i in jobKey[page]:
@@ -442,5 +449,5 @@ def judge_contain_str(jobType,page):
 if __name__ == '__main__':
 
     # print(index_data())
-    index_data()
+    getTop5JobNum(4)
 
