@@ -1,7 +1,6 @@
-{%extends 'myapp/home.html'%}
+{% extends 'myapp/home.html' %}
 {% load static %}
 {% block content %}
-
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
@@ -9,26 +8,34 @@
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己申请"></script>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/api?v=2.0&ak=自己申请一个百度地图api"></script>
     <script type="text/javascript"
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
-
-
     <div class="content">
+        <!--数据库数据显示-->
+        <!--能否显示爬虫的爬取速度和网速？-->
         <div class="row">
-                <!--详细页(地图)-->
-                <div class="col-md-8">
-                    <div class="card" id="map" style="width: 100%;height:825px; "></div>
-                </div>
-
-                <!--详细页右栏-->
-                <div class="col-md-4">
-                    <div class="card" id='right_top' style="height: 400px;width: 100%;padding: auto"></div>
-                    <div class="card" id='right_bottom' style="height: 400px;width: 100%;padding: auto"></div>
-                </div>
+            <div class="col-md-6">
+                <div class="card"  style="height: 400px;width: 100%;padding: auto"></div>
             </div>
+            <div class="col-md-6">
+                <div class="card"  style="height: 400px;width: 100%;padding: auto"></div>
+            </div>
+        </div>
+        <div class="row">
+            <!--详细页(地图)-->
+            <div class="col-md-8">
+                <div class="card" id="map" style="width: 100%;height:825px; "></div>
+            </div>
+            <!--详细页右栏-->
+            <div class="col-md-4">
+                <div class="card" id='right_top' style="height: 400px;width: 100%;padding: auto"></div>
+                <div class="card" id='right_bottom' style="height: 400px;width: 100%;padding: auto"></div>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -471,12 +478,12 @@
         // 右侧上部柱状图
 
         //dataAxis使用后端获取前50的城市数据
-        var myBarChart=echarts.init(document.getElementById('right_top'));
+        var myBarChart = echarts.init(document.getElementById('right_top'));
         //视图函数传递三个值，X轴：城市名(dataAxis)  Y轴：职位数(data1)  Y轴最大值：yMax
-        var result_al={{ ringt_top_data|safe }};
-        var dataAxis=result_al[0];
-        var data1=result_al[1];
-        var yMax = result_al[2]+100; //最大值也由后台计算得出
+        var result_al ={{ ringt_top_data|safe }};
+        var dataAxis = result_al[0];
+        var data1 = result_al[1];
+        var yMax = result_al[2] + 100; //最大值也由后台计算得出
 
         var dataShadow = [];
 
@@ -552,7 +559,7 @@
                                 textStyle: {
                                     color: 'black'
                                 }
-                    }
+                            }
                         },
                         emphasis: {
                             color: new echarts.graphic.LinearGradient(
@@ -585,11 +592,11 @@
 
         //右侧下部饼状图
 
-        var pie_data={{ right_bottom_data|safe }};
-        var jobType_data=pie_data[0];
-        var job_num_data=pie_data[1];
+        var pie_data ={{ right_bottom_data|safe }};
+        var jobType_data = pie_data[0];
+        var job_num_data = pie_data[1];
 
-        var myPieChart=echarts.init(document.getElementById("right_bottom"));
+        var myPieChart = echarts.init(document.getElementById("right_bottom"));
         var pie_option = {
             title: {
                 text: '不同行业所占比重',
@@ -604,7 +611,7 @@
                 orient: 'vertical',
                 left: 'right',
                 //八个行业的名称
-                data:jobType_data,
+                data: jobType_data,
             },
             series: [
                 {
@@ -613,7 +620,7 @@
                     radius: '55%',
                     center: ['50%', '60%'],
                     // 八分行业名称数据
-                    data:job_num_data,
+                    data: job_num_data,
 
                     itemStyle: {
                         emphasis: {
@@ -630,7 +637,7 @@
 
 
         //使窗口自适应屏幕大小
-        window.addEventListener("resize",function () {
+        window.addEventListener("resize", function () {
             myChart.resize();
             myBarChart.resize();
             myPieChart.resize();

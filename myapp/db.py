@@ -448,6 +448,5 @@ def judge_contain_str(jobType,page):
 
 if __name__ == '__main__':
 
-    # print(index_data())
     getTop5JobNum(4)
 
