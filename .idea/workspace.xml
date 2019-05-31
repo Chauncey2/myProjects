@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba02996-2011-4fb4-9db8-cf559c72ac50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../zhaopin_spider/test/test04.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" afterDir="false" />
@@ -9,8 +10,9 @@
       <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/qiancheng_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/qiancheng_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zhaopin_spider/test/test03.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/test/test03.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +22,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/myProjects$db.coverage" NAME="db Coverage Results" MODIFIED="1558013129072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myapp" />
+    <SUITE FILE_PATH="coverage/myProjects$db.coverage" NAME="db Coverage Results" MODIFIED="1559271746170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myapp" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="409" column="13" lean-forward="true" selection-start-line="409" selection-start-column="13" selection-end-line="409" selection-end-column="13" />
+            <state relative-caret-position="-324">
+              <caret line="104" column="58" lean-forward="true" selection-start-line="104" selection-start-column="58" selection-end-line="104" selection-end-column="58" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#168#555#0" />
+                <element signature="e#585#1222#0" />
+                <element signature="e#593#735#0" />
+                <element signature="e#932#1041#0" />
+                <element signature="e#2465#2683#0" />
+                <element signature="e#3972#4162#0" />
+                <element signature="e#4190#5177#0" />
+                <element signature="e#5209#6699#0" />
+                <element signature="e#6760#9033#0" />
+                <element signature="e#8059#8642#0" />
+                <element signature="e#9020#11760#0" />
                 <element signature="e#10424#11141#0" />
                 <element signature="e#11801#11934#0" />
                 <element signature="e#11981#12084#0" />
@@ -46,10 +59,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="242">
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
+                <element signature="e#1013#1257#0" />
+                <element signature="e#1283#1678#0" />
               </folding>
             </state>
           </provider>
@@ -58,27 +73,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+            <state relative-caret-position="225">
+              <caret line="483" column="40" selection-start-line="483" selection-start-column="26" selection-end-line="483" selection-end-column="40" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#script#9;n#!!top" />
-                <element signature="e#1984#8778#0#HTML" />
+                <element signature="e#2370#9164#0#HTML" />
+                <element signature="e#9208#9635#0#HTML" />
+                <element signature="e#9658#17748#0#HTML" />
+                <element signature="e#18250#18296#0#HTML" />
+                <element signature="e#21200#21562#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="146">
+              <caret line="63" column="34" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="34" />
               <folding>
-                <element signature="e#3000#28017#0#HTML" />
+                <element signature="e#1657#1704#0#HTML" expanded="true" />
+                <element signature="e#2212#2406#0#HTML" />
+                <element signature="e#2518#2711#0#HTML" />
+                <element signature="e#2728#2950#0#HTML" />
+                <element signature="e#2771#2927#0#HTML" />
+                <element signature="e#2834#2899#0#HTML" expanded="true" />
+                <element signature="e#4424#5115#0#HTML" />
+                <element signature="e#5375#12169#0#HTML" />
+                <element signature="e#12213#12638#0#HTML" />
+                <element signature="e#12661#20749#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -109,6 +132,9 @@
       <find>PHP</find>
       <find>judge</find>
       <find>sort</find>
+      <find>工作经验</find>
+      <find>zhilian</find>
+      <find>right_top</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,18 +155,18 @@
         <option value="$PROJECT_DIR$/myapp/models.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
         <option value="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" />
-        <option value="$PROJECT_DIR$/myapp/db.py" />
         <option value="$PROJECT_DIR$/myapp/views.py" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
+        <option value="$PROJECT_DIR$/myapp/db.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="902" />
+    <option name="y" value="17" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,6 +185,12 @@
               <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
               <item name="myProjects" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
@@ -183,12 +214,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhaopin_spider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -480,7 +512,13 @@
       <workItem from="1558601966892" duration="116000" />
       <workItem from="1558602095736" duration="2387000" />
       <workItem from="1558766434386" duration="794000" />
-      <workItem from="1558853460027" duration="1664000" />
+      <workItem from="1558853460027" duration="1824000" />
+      <workItem from="1558926140801" duration="6000" />
+      <workItem from="1558938593783" duration="3090000" />
+      <workItem from="1559011534152" duration="2571000" />
+      <workItem from="1559090189980" duration="4605000" />
+      <workItem from="1559127235206" duration="210000" />
+      <workItem from="1559262428019" duration="10568000" />
     </task>
     <task id="LOCAL-00001" summary="update code">
       <created>1557151935152</created>
@@ -545,11 +583,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558016200723</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update code">
+      <created>1558855441528</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558855441528</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284542000" />
+    <option name="totallyTimeSpent" value="305752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,13 +607,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17828418" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1930295" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Structure" order="1" weight="0.24929178" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3045326" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.26487252" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.3286119" />
@@ -614,9 +658,9 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update code" />
     <MESSAGE value="V1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0" />
+    <MESSAGE value="update code" />
+    <option name="LAST_COMMIT_MESSAGE" value="update code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/myapp/static/myapp/css/simple-line-icons.css" />
@@ -753,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myProjects/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -804,51 +841,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db.py">
+    <entry file="file://$PROJECT_DIR$/myapp/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="409" column="13" lean-forward="true" selection-start-line="409" selection-start-column="13" selection-end-line="409" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#10424#11141#0" />
-            <element signature="e#11801#11934#0" />
-            <element signature="e#11981#12084#0" />
-            <element signature="e#12128#12247#0" />
-          </folding>
+        <state relative-caret-position="28">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/views.py">
+    <entry file="file://$PROJECT_DIR$/myProjects/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+        <state relative-caret-position="225">
+          <caret line="483" column="40" selection-start-line="483" selection-start-column="26" selection-end-line="483" selection-end-column="40" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#script#9;n#!!top" />
-            <element signature="e#1984#8778#0#HTML" />
+            <element signature="e#2370#9164#0#HTML" />
+            <element signature="e#9208#9635#0#HTML" />
+            <element signature="e#9658#17748#0#HTML" />
+            <element signature="e#18250#18296#0#HTML" />
+            <element signature="e#21200#21562#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        <state relative-caret-position="146">
+          <caret line="63" column="34" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="34" />
           <folding>
-            <element signature="e#3000#28017#0#HTML" />
+            <element signature="e#1657#1704#0#HTML" expanded="true" />
+            <element signature="e#2212#2406#0#HTML" />
+            <element signature="e#2518#2711#0#HTML" />
+            <element signature="e#2728#2950#0#HTML" />
+            <element signature="e#2771#2927#0#HTML" />
+            <element signature="e#2834#2899#0#HTML" expanded="true" />
+            <element signature="e#4424#5115#0#HTML" />
+            <element signature="e#5375#12169#0#HTML" />
+            <element signature="e#12213#12638#0#HTML" />
+            <element signature="e#12661#20749#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#1013#1257#0" />
+            <element signature="e#1283#1678#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="104" column="58" lean-forward="true" selection-start-line="104" selection-start-column="58" selection-end-line="104" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#168#555#0" />
+            <element signature="e#585#1222#0" />
+            <element signature="e#593#735#0" />
+            <element signature="e#932#1041#0" />
+            <element signature="e#2465#2683#0" />
+            <element signature="e#3972#4162#0" />
+            <element signature="e#4190#5177#0" />
+            <element signature="e#5209#6699#0" />
+            <element signature="e#6760#9033#0" />
+            <element signature="e#8059#8642#0" />
+            <element signature="e#9020#11760#0" />
+            <element signature="e#10424#11141#0" />
+            <element signature="e#11801#11934#0" />
+            <element signature="e#11981#12084#0" />
+            <element signature="e#12128#12247#0" />
           </folding>
         </state>
       </provider>

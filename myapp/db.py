@@ -6,7 +6,7 @@ import re
 HOST='127.0.0.1'
 PORT=27017
 DATABASE_NAME='JobInfo'
-COLLECTION_NAME='zhilian'
+COLLECTION_NAME='test'
 
 
 # 每个行业的关键字参数
@@ -38,7 +38,7 @@ jobNameKey={
 def index_data():
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     # 根据城市进行分组，获取城市职位数目数据,返回数组游标
     pipline=[
@@ -96,11 +96,10 @@ def index_data():
     conn.close()
     return result
 
-
 def get_map_data(page):
     conn=conn=MongoClient(HOST,PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     pipline=[
         {'$group': {'_id': {'city':'$city','jobType':'$jobType'}, 'value': {'$sum': 1}}}
@@ -128,7 +127,6 @@ def get_map_data(page):
 
     conn.close()
     return result
-
 
 def top5level(page):
     rel=get_map_data(page)
@@ -162,7 +160,7 @@ def to5LevelCityPie(page):
 def wordCloud(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     pipline = [
         {'$group': {'_id': {'skill':'$extractSkillTag','jobType':'$jobType'}}}
@@ -205,7 +203,7 @@ def getTop5JobNum(page):
     # 连接数据库
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     piplne=[
         {'$group': {'_id': {'jobType':'$jobType','jobName':'$jobName'},"count":{"$sum":1}}}
@@ -261,7 +259,7 @@ def getTop5JobNum(page):
 def exp_salary(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     pipline = [
         {'$group': {'_id': {'exp':'$workingExp','salary':'$salary','jobType':"$jobType"}}}
@@ -337,7 +335,7 @@ def exp_salary(page):
 def level_salary(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
-    mycollection = db.zhilian
+    mycollection = db[COLLECTION_NAME]
 
     pipline = [
         {'$group': {'_id': {'eduLevel':'$eduLevel', 'salary': '$salary', 'jobType': "$jobType"}}}

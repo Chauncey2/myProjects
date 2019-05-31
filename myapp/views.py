@@ -6,7 +6,7 @@ from .db import *
 import json
 
 
-# @cache_page(24*3600)
+@cache_page(24*3600)
 def index(request):
     data=index_data()
 

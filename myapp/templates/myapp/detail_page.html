@@ -8,7 +8,7 @@
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=自己申请一个百度地图api"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak="></script>
     <script type="text/javascript"
             src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
@@ -68,7 +68,7 @@
         var right_top_chart = echarts.init(document.getElementById('right_top'));
         var option_right_top = {
             title: {
-                text: '各城市职位分布',
+                text: 'TOP5城市数据',
 
             },
             tooltip: {
@@ -129,7 +129,7 @@
             calculable: true,
             series: [
                 {
-                    name: '访问来源',
+                    name: '职位数',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
@@ -725,7 +725,7 @@
         var salaryAndLevelChart=echarts.init(document.getElementById("salaryAndLevel"));
         var SL_option = {
              title: {
-                text: '工作经验与薪资相关分析',
+                text: '学历与薪资相关分析',
             },
             tooltip: {
                 trigger: 'axis',
