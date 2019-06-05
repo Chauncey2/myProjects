@@ -482,6 +482,7 @@
         var myBarChart = echarts.init(document.getElementById('right_top'));
         //视图函数传递三个值，X轴：城市名(dataAxis)  Y轴：职位数(data1)  Y轴最大值：yMax
         var result_al ={{ ringt_top_data|safe }};
+
         var dataAxis = result_al[0];
         var data1 = result_al[1];
         var yMax = result_al[2] + 100; //最大值也由后台计算得出

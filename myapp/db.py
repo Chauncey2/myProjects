@@ -35,6 +35,7 @@ jobNameKey={
     7:['人事','财务','行政','人力','主管','出纳','会计','税务','财务主管','法务主管','前台'],
 }
 
+# 首页视图函数
 def index_data():
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
@@ -96,6 +97,7 @@ def index_data():
     conn.close()
     return result
 
+# 获取地图数据
 def get_map_data(page):
     conn=conn=MongoClient(HOST,PORT)
     db = conn[DATABASE_NAME]
@@ -128,7 +130,30 @@ def get_map_data(page):
     conn.close()
     return result
 
+# 右侧上部柱状图，带滑动
+def top100_city_data(page):
+
+    rel = get_map_data(page)
+    # 对数据进行排序
+    sorted_result = sorted(rel, key=operator.itemgetter('value'))
+
+    # 取Top5的数据
+    data = sorted_result[-100:]
+    city_list = list()
+    num_list = list()
+
+    for i in range(len(data)):
+        city_list.append(data[i]['_id'])
+        num_list.append(data[i]['value'])
+
+    yMax=np.max(num_list)
+    result = [city_list, num_list,yMax]
+    return result
+
+
+# 右侧上部柱状图(原函数)
 def top5level(page):
+
     rel=get_map_data(page)
     # 对数据进行排序
     sorted_result=sorted(rel,key=operator.itemgetter('value'))
@@ -145,7 +170,7 @@ def top5level(page):
     result=[city_list,num_list]
     return result
 
-
+# 右侧下部饼状图
 def to5LevelCityPie(page):
     rel=top5level(page)
     city=rel[0]
@@ -156,7 +181,7 @@ def to5LevelCityPie(page):
     result=[city,pie_data]
     return result
 
-
+# 词云
 def wordCloud(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
@@ -198,7 +223,7 @@ def wordCloud(page):
     conn.close()
     return result
 
-
+# 职位排名前五
 def getTop5JobNum(page):
     # 连接数据库
     conn = conn = MongoClient(HOST, PORT)
@@ -255,7 +280,7 @@ def getTop5JobNum(page):
     conn.close()
     return result
 
-
+# 工作经验与平均薪资
 def exp_salary(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
@@ -331,7 +356,7 @@ def exp_salary(page):
 
     return result
 
-
+# 学历与平均薪资
 def level_salary(page):
     conn = conn = MongoClient(HOST, PORT)
     db = conn[DATABASE_NAME]
@@ -418,6 +443,7 @@ def level_salary(page):
     conn.close()
     return result
 
+# 辅助分组函数1
 def judge_jobName_str(jobName,jk):
     pattern_str=jk
     regx = re.compile(pattern_str, re.I)
@@ -425,14 +451,14 @@ def judge_jobName_str(jobName,jk):
         return True
     return False
 
-
+# 辅助分组函数2
 def judge_contain_jobstr(jobName,page):
     for i in jobNameKey[page]:
         if jobName.__contains__(i):
             return True
     return False
 
-
+# 辅助分组函数3
 def judge_contain_str(jobType,page):
     # 对数据根据八个类别进行分组
     for i in jobKey[page]:

@@ -5,6 +5,8 @@ app_name='myapp'
 urlpatterns=[
     path(r'',views.index,name='index'),
     path(r'detail/<int:page>/',views.detail,name='detail_page'),
+    path(r'monitoring/',views.monitor,name='monitor_page'),
     # 测试页面
     path(r'test/',views.test,name='test'),
+
 ]

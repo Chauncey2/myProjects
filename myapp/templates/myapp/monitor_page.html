@@ -1,0 +1,39 @@
+{% extends 'myapp/home.html' %}
+{% load static %}
+{% block content %}
+{
+    <script src="{% static 'myapp/js/jquery/jquery.js' %}"></script>
+    <!--局部刷新-->
+
+    <!--爬虫监控页面-->
+    <div class="content">
+        <h1>爬虫监控</h1>
+        <div class="data">
+
+        </div>
+    </div>
+{#    {'data':{'name':'小明','age':10,'male':'男'}}#}
+    <script>
+        window.setInterval("refersh()",1000);
+        function refersh() {
+            $.ajax({
+                url:'/', //这里引用地址出错
+                data:{},
+                dataType:'json',
+                timeout:10000,
+                success:function (result) {
+                    //这里应该把标签加到页面中
+                    var insertHTML="<table>" +
+                        "<tr>" +
+                            "<td>+result.name+</td>" +
+                            "<td>+result.age+</td>" +
+                            "<td>+result.male+</td>" +
+                        "</tr>" +
+                        "</table>"
+                }
+            })
+        }
+    </script>
+
+{% endblock %}
+

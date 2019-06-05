@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>测试MongoDB</title>
-</head>
-<body>
-<div>
-    {% if skill_key %}
-        {% for foo in skill_key %}
-            <li>{{ foo }}<li>
-        {% endfor %}
-    {% endif %}
-</div>
+{% extends 'myapp/home.html' %}
+{% load static %}
+{% block content %}
+{
 
-</body>
-</html>
+    <div class="content">
+        <div>
+
+        </div>
+    </div>
+
+{% endblock %}
+

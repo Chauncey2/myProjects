@@ -37,7 +37,7 @@ def detail(request,page):
     mapData=get_map_data(page)
 
     # 各城市职位排名
-    rightTop=top5level(page)
+    rightTop=top100_city_data(page)
 
     # 各城市职位数所占比重
     rightBottom=to5LevelCityPie(page)
@@ -64,6 +64,12 @@ def detail(request,page):
         'salary_exp':salary_exp,
         'salary_level':salary_level
     })
+
+
+def monitor(request):
+
+    return render(request,"myapp/monitor_page.html",{'data':{'name':'小明','age':10,'male':'男'}})
+
 
 def test(request):
     keys=list()
