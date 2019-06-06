@@ -67,8 +67,9 @@ def detail(request,page):
 
 
 def monitor(request):
-
-    return render(request,"myapp/monitor_page.html",{'data':{'name':'小明','age':10,'male':'男'}})
+    data=crawl_monitor_page()
+    context={"jobData":data}
+    return render(request,"myapp/monitor_page.html",context)
 
 
 def test(request):

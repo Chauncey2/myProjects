@@ -2,37 +2,58 @@
 {% load static %}
 {% block content %}
 {
-    <script src="{% static 'myapp/js/jquery/jquery.js' %}"></script>
-    <!--局部刷新-->
-
+    <style type="text/css">
+        .table{
+                table-layout:fixed;
+                empty-cells:show;
+                border-collapse: collapse;
+                margin:0 auto;
+             }
+        .h1{
+            font-size: 45px;
+            font-weight:bold;
+        }
+        .td{
+            height:20px;
+            width: 40px;
+        }
+        .td1{
+            height:20px;
+            width: 40px;
+            font-size:20px;
+            font-weight:bold;
+        }
+    </style>
     <!--爬虫监控页面-->
     <div class="content">
-        <h1>爬虫监控</h1>
-        <div class="data">
+        <h1 class="h1">爬虫监控</h1>
+        <div class="card" >
+
+            <table class="table">
+                <td class="td1">职位类型</td>
+                <td class="td1">职位名称</td>
+                <td class="td1">工作城市</td>
+                <td class="td1">薪资待遇</td>
+                <td class="td1">公司名称</td>
+                {% for item in jobData%}
+                    <tr>
+                        <td class="td">{{item.jobType}}</td>
+                        <td class="td">{{item.jobName}}</td>
+                        <td class="td">{{item.city}}</td>
+                        <td class="td">{{item.salary}}</td>
+                        <td class="td">{{item.companyName}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
 
         </div>
     </div>
-{#    {'data':{'name':'小明','age':10,'male':'男'}}#}
-    <script>
-        window.setInterval("refersh()",1000);
-        function refersh() {
-            $.ajax({
-                url:'/', //这里引用地址出错
-                data:{},
-                dataType:'json',
-                timeout:10000,
-                success:function (result) {
-                    //这里应该把标签加到页面中
-                    var insertHTML="<table>" +
-                        "<tr>" +
-                            "<td>+result.name+</td>" +
-                            "<td>+result.age+</td>" +
-                            "<td>+result.male+</td>" +
-                        "</tr>" +
-                        "</table>"
-                }
-            })
+
+    <script type="text/javascript">
+         function myrefresh() {
+            window.location.reload()
         }
+        setTimeout("myrefresh()",3000)
     </script>
 
 {% endblock %}

@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba02996-2011-4fb4-9db8-cf559c72ac50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zhaopin_spider/test/test05.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/qiancheng_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/qiancheng_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/keywords.json" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/keywords.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zhaopin_spider/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zhaopin_spider/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/myProjects$db.coverage" NAME="db Coverage Results" MODIFIED="1559271746170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myapp" />
+    <SUITE FILE_PATH="coverage/myProjects$db.coverage" NAME="db Coverage Results" MODIFIED="1559825730490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myapp" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -31,10 +33,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3640">
-              <caret line="133" column="27" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
+            <state relative-caret-position="433">
+              <caret line="482" lean-forward="true" selection-start-line="482" selection-end-line="482" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#582#1219#0" />
+                <element signature="e#1252#2813#0" />
+                <element signature="e#2852#3592#0" />
+                <element signature="e#3641#4038#0" />
+                <element signature="e#4082#4432#0" />
+                <element signature="e#4475#4665#0" />
+                <element signature="e#4697#5693#0" />
+                <element signature="e#5733#7232#0" />
+                <element signature="e#7272#9542#0" />
+                <element signature="e#9582#12331#0" />
+                <element signature="e#12382#12515#0" />
+                <element signature="e#12571#12674#0" />
+                <element signature="e#12727#12846#0" />
               </folding>
             </state>
           </provider>
@@ -43,14 +58,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="70" column="94" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="94" />
+            <state relative-caret-position="-191">
+              <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#194#513#0" />
-                <element signature="e#566#1265#0" />
                 <element signature="e#1020#1264#0" />
-                <element signature="e#1290#1685#0" />
               </folding>
             </state>
           </provider>
@@ -59,17 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="17" column="22" selection-end-line="651" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+            <state relative-caret-position="224">
+              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -78,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/myapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="22" />
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="22" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -86,41 +90,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myProjects/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
               <folding>
-                <element signature="e#1#33#0" expanded="true" />
+                <element signature="n#style#0;n#!!top" />
+                <element signature="e#113#213#0#HTML" />
+                <element signature="n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/test.html">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="308">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -170,14 +167,14 @@
         <option value="$PROJECT_DIR$/myProjects/settings.py" />
         <option value="$PROJECT_DIR$/myapp/models.py" />
         <option value="$PROJECT_DIR$/../zhaopin_spider/Zhaoping/spiders/job_spider.py" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
-        <option value="$PROJECT_DIR$/myapp/db.py" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" />
-        <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/test.html" />
-        <option value="$PROJECT_DIR$/myapp/views.py" />
         <option value="$PROJECT_DIR$/myapp/urls.py" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/home.html" />
+        <option value="$PROJECT_DIR$/myapp/views.py" />
+        <option value="$PROJECT_DIR$/myapp/db.py" />
         <option value="$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/index.html" />
+        <option value="$PROJECT_DIR$/myapp/templates/myapp/detail_page.html" />
       </list>
     </option>
   </component>
@@ -207,6 +204,19 @@
             <path>
               <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
               <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myProjects" type="462c0819:PsiDirectoryNode" />
               <item name="myProjects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -219,7 +229,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhaopin_spider" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -521,7 +531,8 @@
       <workItem from="1559362883783" duration="3989000" />
       <workItem from="1559443856831" duration="1322000" />
       <workItem from="1559523312603" duration="2246000" />
-      <workItem from="1559731646669" duration="6761000" />
+      <workItem from="1559731646669" duration="6845000" />
+      <workItem from="1559784260390" duration="20847000" />
     </task>
     <task id="LOCAL-00001" summary="update code">
       <created>1557151935152</created>
@@ -600,11 +611,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559290188382</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update code">
+      <created>1559747362495</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559747362496</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328393000" />
+    <option name="totallyTimeSpent" value="349324000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,10 +638,10 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.92669433" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21983914" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Structure" order="1" weight="0.24929178" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2776204" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2776204" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.3286119" />
@@ -827,22 +845,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3640">
-          <caret line="133" column="27" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="17" column="22" selection-end-line="651" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/test.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -850,16 +854,6 @@
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/static/myapp/js/jquery/jquery.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myProjects/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -871,10 +865,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="22" />
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="22" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -883,29 +884,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="70" column="94" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="94" />
+        <state relative-caret-position="-191">
+          <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <element signature="e#194#513#0" />
-            <element signature="e#566#1265#0" />
             <element signature="e#1020#1264#0" />
-            <element signature="e#1290#1685#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="482" lean-forward="true" selection-start-line="482" selection-end-line="482" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#582#1219#0" />
+            <element signature="e#1252#2813#0" />
+            <element signature="e#2852#3592#0" />
+            <element signature="e#3641#4038#0" />
+            <element signature="e#4082#4432#0" />
+            <element signature="e#4475#4665#0" />
+            <element signature="e#4697#5693#0" />
+            <element signature="e#5733#7232#0" />
+            <element signature="e#7272#9542#0" />
+            <element signature="e#9582#12331#0" />
+            <element signature="e#12382#12515#0" />
+            <element signature="e#12571#12674#0" />
+            <element signature="e#12727#12846#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#!!top" />
+            <element signature="e#113#213#0#HTML" />
+            <element signature="n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/detail_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/templates/myapp/monitor_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
         </state>
       </provider>
     </entry>

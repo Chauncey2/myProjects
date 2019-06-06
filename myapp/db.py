@@ -467,10 +467,31 @@ def judge_contain_str(jobType,page):
     return False
 
 
+def crawl_monitor_page():
+    conn = conn = MongoClient(HOST, PORT)
+    db = conn[DATABASE_NAME]
+    mycollection = db["crawler"]
+
+    result=mycollection.find({})
+    data=[]
+    for item in result:
+        data.append(item)
+
+    data_num=len(data)
+
+    data=data[-10:-1]
+
+    for i in data:
+        print(i)
+
+
+    return data
+
+
 
 
 
 if __name__ == '__main__':
 
-    getTop5JobNum(4)
-
+    # getTop5JobNum(4)
+    crawl_monitor_page()

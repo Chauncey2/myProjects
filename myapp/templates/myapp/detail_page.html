@@ -61,48 +61,6 @@
     </div>
     <script type="text/javascript">
         //右侧栏操作
-        {#var city_data={{ right_top|safe }};#}
-        {#var city=city_data[0];#}
-        {##}
-        {#var num=city_data[1];#}
-        {#var right_top_chart = echarts.init(document.getElementById('right_top'));#}
-        {#var option_right_top = {#}
-        {#    title: {#}
-        {#        text: 'TOP5城市数据',#}
-        {##}
-        {#    },#}
-        {#    tooltip: {#}
-        {#        trigger: 'axis',#}
-        {#        axisPointer: {#}
-        {#            type: 'shadow'#}
-        {#        }#}
-        {#    },#}
-        {#    grid: {#}
-        {#        left: '3%',#}
-        {#        right: '4%',#}
-        {#        bottom: '3%',#}
-        {#        containLabel: true#}
-        {#    },#}
-        {#    xAxis: {#}
-        {#        type: 'value',#}
-        {#        boundaryGap: [0, 0.01]#}
-        {#    },#}
-        {#    yAxis: {#}
-        {#        type: 'category',#}
-        {#        // 数据根据后端数据库读出来的值填充#}
-        {#        data: city,#}
-        {#    },#}
-        {#    series: [#}
-        {#        {#}
-        {#            name: '2019年',#}
-        {#            type: 'bar',#}
-        {#            // 数据根据后端数据库读出来的值填充#}
-        {#            data: num,#}
-        {#        }#}
-        {#    ]#}
-        {#};#}
-        {#right_top_chart.setOption(option_right_top);#}
-        //柱状图操作结束
 
         //修改后的壮柱状图(视图函数传递三个值，X轴：城市名(dataAxis)  Y轴：职位数(data1)  Y轴最大值：yMax)
         var myBarChart = echarts.init(document.getElementById('right_top'));
