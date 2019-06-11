@@ -78,7 +78,7 @@ def index_data():
     pie_jobType_list=['互联网','金融','房地产/建筑','贸易/销售','教育/传媒','服务业','市场/销售','人事/行政']
     temp_cursor2=[]
 
-    # 游标是一次迭代，要不可回退，因此要用临时变量存储
+    # 游标是一次迭代，不可回退，因此要用临时变量存储
     for item in cursor2:
         temp_cursor2.append(item)
 
@@ -90,6 +90,8 @@ def index_data():
                 value+=item['count']
         data={"value":value,"name":pie_jobType_list[i]}
         pie_dict_data.append(data)
+
+    print(pie_dict_data)
 
     result_pie=[pie_jobType_list,pie_dict_data]
     result.append(result_pie)
@@ -287,65 +289,71 @@ def exp_salary(page):
     mycollection = db[COLLECTION_NAME]
 
     pipline = [
-        {'$group': {'_id': {'exp':'$workingExp','salary':'$salary','jobType':"$jobType"}}}
+        {'$group': {'_id': {'exp':'$workingExp','salary':'$salary','jobType':"$jobType"},'count':{"$sum":1}}}
     ]
     cursor = mycollection.aggregate(pipline)
 
     # 对分组数据进行分类
     exp_salary_list=[]
+
     for item in cursor:
         if judge_contain_str(item["_id"]['jobType'],page):
             if item["_id"]["salary"] !=['薪资面议']:
-
                 if item["_id"]["salary"]=='1K以下' or item["_id"]["salary"]=='校招' :
                     item["_id"]["salary"]=[0,1000]
                     salary_list = np.array(item["_id"]["salary"], dtype='float_')
                     average_salary = np.mean(salary_list)  # 用numpy库计算平均薪资
-                    data = {"exp": item["_id"]["exp"], "salary": int(average_salary)}
+                    data = {"exp": item["_id"]["exp"], "salary": int(average_salary),"count":item["count"]}
                     exp_salary_list.append(data)
                 else:
                     salary_list = np.array(item["_id"]["salary"], dtype='float_')
                     average_salary = np.mean(salary_list)  # 用numpy库计算平均薪资
-                    data = {"exp": item["_id"]["exp"], "salary": int(average_salary)}
+                    data = {"exp": item["_id"]["exp"], "salary": int(average_salary),"count":item["count"]}
                     exp_salary_list.append(data)
 
+    print("经验和薪资的关系分组结果",len(exp_salary_list))
 
     # 针对工作年薪进行分组统计，职位数和平均薪资
     a1,a2,a3,a4,a5,a6,a7=0,0,0,0,0,0,0
     b1, b2, b3, b4, b5, b6, b7 = 0, 0, 0, 0, 0, 0, 0
     for item in exp_salary_list:
+        # print(item)
         if item["exp"]=="不限":
-            a1+=item["salary"]
-            b1+=1
+            a1+=item["salary"]*item["count"]
+            b1+=item["count"]
 
         if item["exp"]=="无经验":
-            a2 += item["salary"]
-            b2 += 1
+            a2 += item["salary"]*item["count"]
+            b2 += item["count"]
 
         if item["exp"]=="1年以下":
-            a3 += item["salary"]
-            b3 += 1
+            a3 += item["salary"]*item["count"]
+            b3 += item["count"]
 
         if item["exp"]==[1,3]:
-            a4 += item["salary"]
-            b4 += 1
+            a4 += item["salary"]*item["count"]
+            b4 += item["count"]
 
         if item["exp"]==[3,5]:
-            a5 += item["salary"]
-            b5 += 1
+            a5 += item["salary"]*item["count"]
+            b5 += item["count"]
 
         if item["exp"]==[5,10]:
-            a6 += item["salary"]
-            b6 += 1
+            a6 += item["salary"]*item["count"]
+            b6 += item["count"]
 
         if item["exp"]=="10年以上":
-            a7+= item["salary"]
-            b7 += 1
+            a7+= item["salary"]*item["count"]
+            b7 += item["count"]
 
     result=[]
     exp_job_num=[b1,b2,b3,b4,b5,b6,b7]
     # 使用numpy将数据取整
     exp_average_salary=np.array([a1/b1,a2/b2,a3/b3,a4/b4,a5/b5,a6/b6,a7/b7],dtype="int_")
+
+    print("经验和薪资之间的关系",exp_job_num)
+    print("经验和薪资之间的关系平均薪资", exp_average_salary)
+
     data1={"exp_job_num":exp_job_num}
     data2={"exp_average_salary":list(exp_average_salary)}
 
@@ -362,69 +370,81 @@ def level_salary(page):
     db = conn[DATABASE_NAME]
     mycollection = db[COLLECTION_NAME]
 
+    # 修改bug，增加计数字段
     pipline = [
-        {'$group': {'_id': {'eduLevel':'$eduLevel', 'salary': '$salary', 'jobType': "$jobType"}}}
+        {'$group': {'_id': {'eduLevel':'$eduLevel', 'salary': '$salary', 'jobType': "$jobType"},'count':{'$sum':1}}}
     ]
     cursor = mycollection.aggregate(pipline)
 
     # 对分组数据进行分类
     edu_salary_list = []
+    data_tag=0
     for item in cursor:
+        data_tag+=1
+        print(item)
         if judge_contain_str(item["_id"]['jobType'], page):
             if item["_id"]["salary"] != ['薪资面议']:
-
                 if item["_id"]["salary"] == '1K以下'or item["_id"]["salary"]=='校招':
                     item["_id"]["salary"] = [0, 1000]
                     salary_list = np.array(item["_id"]["salary"], dtype='float_')
                     average_salary = np.mean(salary_list)  # 用numpy库计算平均薪资
-                    data = {"eduLevel": item["_id"]["eduLevel"], "salary": int(average_salary)}
+
+                    # data = {"eduLevel": item["_id"]["eduLevel"], "salary": int(average_salary)}
+                    data={"eduLevel": item["_id"]["eduLevel"], "salary": int(average_salary),"count":item['count']}
                     edu_salary_list.append(data)
+
                 else:
                     salary_list = np.array(item["_id"]["salary"], dtype='float_')
                     average_salary = np.mean(salary_list)  # 用numpy库计算平均薪资
-                    data = {"eduLevel": item["_id"]["eduLevel"], "salary": int(average_salary)}
+                    data = {"eduLevel": item["_id"]["eduLevel"], "salary": int(average_salary),"count":item['count']}
                     edu_salary_list.append(data)
 
     # 针对工作年薪进行分组统计，职位数和平均薪资
     a1, a2, a3, a4, a5, a6, a7 ,a8= 0, 0, 0, 0, 0, 0, 0,0   # 薪资和
     b1, b2, b3, b4, b5, b6, b7 ,b8 = 0, 0, 0, 0, 0, 0, 0,0  # 职位数
+
+    print("筛选之后的互联网行业职位数：",len(edu_salary_list),'游标中的数据',data_tag)
+
     for item in edu_salary_list:
         if item["eduLevel"] == "不限":
             a1 += item["salary"]
-            b1 += 1
+            b1 += item['count']
 
         if item["eduLevel"] == "中技":
             a2 += item["salary"]
-            b2 += 1
+            b2 += item['count']
 
         if item["eduLevel"] == "中专":
             a3 += item["salary"]
-            b3 += 1
+            b3 += item['count']
 
         if item["eduLevel"] == "高中":
             a4 += item["salary"]
-            b4 += 1
+            b4 += item['count']
 
         if item["eduLevel"] == "大专":
             a5 += item["salary"]
-            b5 += 1
+            b5 += item['count']
 
         if item["eduLevel"] == "本科":
             a6 += item["salary"]
-            b6 += 1
+            b6 += item['count']
 
         if item["eduLevel"] == "硕士":
             a7 += item["salary"]
-            b7 += 1
+            b7 += item['count']
 
         if item["eduLevel"] == "博士":
             a8+= item["salary"]
-            b8 += 1
+            b8 += item['count']
 
     result = []
     edu_average_salary=[]
     salary=[a1, a2, a3, a4, a5, a6, a7 ,a8]
     edu_job_num = [b1, b2, b3, b4, b5, b6, b7,b8]
+
+    print("每个学历对应的职位数据",edu_job_num)
+
     # 使用numpy将数据取整
     for i in range(len(salary)):
         if salary[i] is not 0:
@@ -487,11 +507,10 @@ def crawl_monitor_page():
 
     return data
 
-
-
-
-
 if __name__ == '__main__':
 
     # getTop5JobNum(4)
-    crawl_monitor_page()
+    # crawl_monitor_page()
+    # index_data()
+    exp_salary(0)
+    # level_salary(0)
