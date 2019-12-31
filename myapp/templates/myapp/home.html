@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{% static 'myapp/css/simple-line-icons/css/simple-line-icons.css '%}" >
     <link rel="stylesheet" href="{% static 'myapp/css/font-awesome/css/fontawesome-all.min.css' %}">
     <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
+
+    <script src="{% static 'myapp/js/echarts/echarts.min.js' %}"></script>
     <script src="{% static 'myapp/js/jquery/jquery.js' %}"></script>
     {% block jsmodel %} {% endblock %}
 </head>
@@ -22,7 +24,7 @@
             <i class="fa fa-bars"></i>
         </a>
     </nav>
-
+    <!--导航栏-->
     <div class="main-container">
         <!--左侧栏目-->
         <div class="sidebar">
@@ -109,8 +111,5 @@
 <script src="{% static 'myapp/js/popper.js/popper.min.js' %}"></script>
 <script src="{% static 'myapp/js/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'myapp/js/chart.js/chart.min.js' %}"></script>
-<!--carbon和demo用于主页页面点击效果-->
-<script src="{% static 'myapp/js/carbon.js' %}"></script>
-<script src="{% static 'myapp/js/demo.js' %}"></script>
 </body>
 </html>

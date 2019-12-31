@@ -91,7 +91,7 @@ def index_data():
         data={"value":value,"name":pie_jobType_list[i]}
         pie_dict_data.append(data)
 
-    print(pie_dict_data)
+    # print(pie_dict_data)
 
     result_pie=[pie_jobType_list,pie_dict_data]
     result.append(result_pie)
@@ -311,7 +311,7 @@ def exp_salary(page):
                     data = {"exp": item["_id"]["exp"], "salary": int(average_salary),"count":item["count"]}
                     exp_salary_list.append(data)
 
-    print("经验和薪资的关系分组结果",len(exp_salary_list))
+    # print("经验和薪资的关系分组结果",len(exp_salary_list))
 
     # 针对工作年薪进行分组统计，职位数和平均薪资
     a1,a2,a3,a4,a5,a6,a7=0,0,0,0,0,0,0
@@ -351,8 +351,8 @@ def exp_salary(page):
     # 使用numpy将数据取整
     exp_average_salary=np.array([a1/b1,a2/b2,a3/b3,a4/b4,a5/b5,a6/b6,a7/b7],dtype="int_")
 
-    print("经验和薪资之间的关系",exp_job_num)
-    print("经验和薪资之间的关系平均薪资", exp_average_salary)
+    # print("经验和薪资之间的关系",exp_job_num)
+    # print("经验和薪资之间的关系平均薪资", exp_average_salary)
 
     data1={"exp_job_num":exp_job_num}
     data2={"exp_average_salary":list(exp_average_salary)}
@@ -381,7 +381,7 @@ def level_salary(page):
     data_tag=0
     for item in cursor:
         data_tag+=1
-        print(item)
+        # print(item)
         if judge_contain_str(item["_id"]['jobType'], page):
             if item["_id"]["salary"] != ['薪资面议']:
                 if item["_id"]["salary"] == '1K以下'or item["_id"]["salary"]=='校招':
@@ -403,7 +403,7 @@ def level_salary(page):
     a1, a2, a3, a4, a5, a6, a7 ,a8= 0, 0, 0, 0, 0, 0, 0,0   # 薪资和
     b1, b2, b3, b4, b5, b6, b7 ,b8 = 0, 0, 0, 0, 0, 0, 0,0  # 职位数
 
-    print("筛选之后的互联网行业职位数：",len(edu_salary_list),'游标中的数据',data_tag)
+    # print("筛选之后的互联网行业职位数：",len(edu_salary_list),'游标中的数据',data_tag)
 
     for item in edu_salary_list:
         if item["eduLevel"] == "不限":
@@ -443,7 +443,7 @@ def level_salary(page):
     salary=[a1, a2, a3, a4, a5, a6, a7 ,a8]
     edu_job_num = [b1, b2, b3, b4, b5, b6, b7,b8]
 
-    print("每个学历对应的职位数据",edu_job_num)
+    # print("每个学历对应的职位数据",edu_job_num)
 
     # 使用numpy将数据取整
     for i in range(len(salary)):
@@ -497,12 +497,8 @@ def crawl_monitor_page():
     for item in result:
         data.append(item)
 
-    data_num=len(data)
-
     data=data[-10:-1]
 
-    for i in data:
-        print(i)
 
 
     return data
