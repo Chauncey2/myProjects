@@ -22,4 +22,5 @@
 ![image](https://github.com/Chauncey2/images/blob/master/IT0.png)
 
 ![image](https://github.com/Chauncey2/images/blob/master/IT.png)
-
+*****
+Djaong选用NoSQL真的是相当于砍掉了它的半壁江山啊~！
